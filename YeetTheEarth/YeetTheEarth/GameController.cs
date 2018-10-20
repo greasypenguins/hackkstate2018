@@ -8,8 +8,8 @@ namespace YeetTheEarth
 {
     public class GameController
     {
-        private Player _player;
-        private Earth _earth;
+        private Player _player = new Player();
+        private Earth _earth = new Earth();
         private EventGenerator _eventGenerator;
         private List<IEvent> _activeEvents;
         private Random _randomizer;

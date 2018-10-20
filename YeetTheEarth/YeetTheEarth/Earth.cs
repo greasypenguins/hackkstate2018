@@ -8,6 +8,11 @@ namespace YeetTheEarth
 {
     class Earth
     {
+
+        public Earth()
+        {
+
+        }
         public int Year = 2016;
         private double _temp = 1.87;
         public double Temp
