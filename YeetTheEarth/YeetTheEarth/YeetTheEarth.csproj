@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="Earth.cs" />
     <Compile Include="Energy.cs" />
+    <Compile Include="EventGenerator.cs" />
+    <Compile Include="SolarTechImprovement.cs" />
+    <Compile Include="EventPopulationExplosion.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="GameController.cs" />
     <Compile Include="Player.cs" />

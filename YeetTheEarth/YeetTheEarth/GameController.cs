@@ -10,11 +10,13 @@ namespace YeetTheEarth
     {
         private Player _player;
         private Earth _earth;
+        private EventGenerator _eventGenerator;
 
         public GameController()
         {
             _player = new Player();
             _earth = new Earth();
+            _eventGenerator = new EventGenerator();
 
             _player.ShowGameIntroMessage();
 
