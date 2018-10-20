@@ -11,8 +11,8 @@ namespace YeetTheEarth
         private Earth _earth;
 
         private string[] _options = {
-            "[1] Do nothing.",
-            "[2] Do something."};
+            "Do nothing.",
+            "Do something."};
 
         private string _name = "Solar Technology Improvement";
         public string Name //Name of event
