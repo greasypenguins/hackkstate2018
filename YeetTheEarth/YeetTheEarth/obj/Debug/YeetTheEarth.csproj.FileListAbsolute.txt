@@ -1,0 +1,2 @@
+C:\Users\karka\Source\Repos\hackkstate2018\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.csprojResolveAssemblyReference.cache
+C:\Users\karka\Source\Repos\hackkstate2018\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.csproj.CoreCompileInputs.cache
