@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YeetTheEarth
 {
-    class EventThorumPower : IEvent
+    class EventThoriumPower : IEvent
     {
         private Earth _earth;
 
@@ -58,7 +58,7 @@ namespace YeetTheEarth
             throw new NotImplementedException();
         }
 
-        public EventThorumPower(Earth earth)
+        public EventThoriumPower(Earth earth)
         {
             _earth = earth;
         }
