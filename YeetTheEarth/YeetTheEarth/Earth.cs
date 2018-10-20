@@ -205,6 +205,17 @@ namespace YeetTheEarth
         }
 
         private Energy _energy;
+        public Energy Energy
+        {
+            get
+            {
+                return _energy;
+            }
+            set
+            {
+                _energy = value;
+            }
+        }
 
         public void NextMonth()
         {

@@ -45,17 +45,30 @@ namespace YeetTheEarth
         }
         public string[] NextMonth() //Advance the event one month and get options
         {
-            string[] ret;
-            _earth.AdvanceMonth();
-
+            _earth.NextMonth();
             return _options;
-
-
         }
 
         public string ChooseOption(int option) //Choose one of the options and get the result
         {
-            throw new NotImplementedException();
+            StringBuilder reaction = new StringBuilder();
+            switch (option)
+            {
+                case 1:
+                    _earth.GDP = _earth.GDP - 3000000000;
+                    _earth.Energy.PercentNuclear = _earth.Energy.PercentNuclear + .5;
+                    _earth.Co2Rate = _earth.Co2Rate - 0.5;
+                    _earth.Population = _earth.Population - 30000000;
+                    reaction.Append("You have spent $3,000,000,000 on new nuclear plants");
+                    reaction.Append("\nThe percent of Nuclear power has increased.");
+                    reaction.Append("\nThe rate of CO2 concentrasion rise has decreased.");
+                    reaction.Append("\nA nuclear reactor eploded and killed 30,000,000 people.");
+                    break;
+                case 2:
+                    reaction.Append("\nNothing happened.");
+                    break;
+            }
+            return reaction.ToString();
         }
 
         public EventThoriumPower(Earth earth)
