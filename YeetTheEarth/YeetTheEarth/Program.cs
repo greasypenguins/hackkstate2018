@@ -10,6 +10,7 @@ namespace YeetTheEarth
     {
         static void Main(string[] args)
         {
+            GameController gc = new GameController();
 
             //Print what month it is/how many months have passed
 
