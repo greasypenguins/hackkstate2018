@@ -8,6 +8,8 @@ namespace YeetTheEarth
 {
     class EventPopulationExplosion : IEvent
     {
+        private Earth _earth;
+
         private string _name = "Population Explosion";
         public string Name //Name of event
         {
@@ -47,6 +49,11 @@ namespace YeetTheEarth
             _monthsLeft--;
 
             throw new NotImplementedException();
+        }
+
+        public EventPopulationExplosion(Earth earth)
+        {
+            _earth = earth;
         }
     }
 }

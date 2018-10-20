@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace YeetTheEarth
 {
-    class SolarTechImprovement : IEvent
+    class EventSolarTechImprovement : IEvent
     {
+        private Earth _earth;
+
         private string _name = "Solar Technology Improvement";
         public string Name //Name of event
         {
@@ -47,6 +49,11 @@ namespace YeetTheEarth
             _monthsLeft--;
 
             throw new NotImplementedException();
+        }
+
+        public EventSolarTechImprovement(Earth earth)
+        {
+            _earth = earth;
         }
     }
 }
