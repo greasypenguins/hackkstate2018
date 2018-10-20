@@ -22,7 +22,7 @@ namespace YeetTheEarth
             }
         }
 
-        private string[] _month;
+        private string[] _month = new string[12];
         private int _indexMonth = 1;
         private string _currentMonth;
         public string CurrentMonth

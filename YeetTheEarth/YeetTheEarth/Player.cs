@@ -24,7 +24,7 @@ namespace YeetTheEarth
 
         public void Show(string s)
         {
-            Console.Write(s);
+            Console.Write("\n"+ s);
         }
 
         public int GetChoice()
