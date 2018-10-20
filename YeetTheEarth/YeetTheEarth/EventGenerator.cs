@@ -16,13 +16,12 @@ namespace YeetTheEarth
         {
             _remainingEvents = new List<IEvent>();
 
-        //Add each possible event
+            //Add each possible event
             _remainingEvents.Add(new EventPopulationExplosion(_earth));
             _remainingEvents.Add(new EventSolarTechImprovement(_earth));
             //...
 
             _randomizer = new Random();
-
         }
 
         public IEvent GetEvent()

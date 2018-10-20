@@ -13,6 +13,7 @@ namespace YeetTheEarth
         private EventGenerator _eventGenerator;
         private List<IEvent> _activeEvents;
         private Random _randomizer;
+        private int _eventGenerationChance;
 
         public GameController()
         {
@@ -21,6 +22,7 @@ namespace YeetTheEarth
             _eventGenerator = new EventGenerator(_earth);
             _activeEvents = new List<IEvent>();
             _randomizer = new Random();
+            _eventGenerationChance = 30; //Each month, 30% chance of generating a new event
 
             _player.ShowGameIntroMessage();
 
@@ -36,6 +38,10 @@ namespace YeetTheEarth
                 _player.Show(string.Format("Global GDP: ${0}", _earth.GDP));
                 
                 //Generate random events sometimes
+                if(_randomizer.Next(100) < _eventGenerationChance)
+                {
+                    _activeEvents.Add(_eventGenerator.GetEvent());
+                }
                 
                 //Handle all active events
                 if(_activeEvents.Count > 0)
