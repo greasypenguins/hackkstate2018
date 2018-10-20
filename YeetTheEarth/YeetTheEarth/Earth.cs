@@ -146,7 +146,7 @@ namespace YeetTheEarth
             }
         }
 
-        private double _seaLevel = 0; //Meters
+        private double _seaLevel = 0; //Meters above initial value
         public double SeaLevel
         {
             get
