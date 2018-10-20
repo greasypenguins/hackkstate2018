@@ -45,18 +45,101 @@ namespace YeetTheEarth
             }
             set
             {
-                _month = new string[12] {"January", "February", "March", "April", "May","June", "July", "August", "September","October" , "November", "December"};
-                
+                _month = new string[12] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
 
             }
         }
-        
+        private double _tempRate;
+        public double TempRate
+        {
+            get
+            {
+                return _tempRate;
+            }
+        }
+
+        private double _co2Con;
+        public double Co2Con
+        {
+            get
+            {
+                return _co2Con;
+            }
+        }
+
+        private double _co2Rate;
+        public double Co2Rate
+        {
+            get
+            {
+                return _co2Rate;
+            }
+        }
+
+        private double _gdp;
+        public double GDP
+        {
+            get
+            {
+                return _gdp;
+            }
+        }
+
+        private int _population;
+        public int Population
+        {
+            get
+            {
+                return _population;
+            }
+        }
+
+        private int _seaLevel;
+        public int SeaLevel
+        {
+            get
+            {
+                return _seaLevel;
+            }
+        }
+
+        private double _seaRate;
+        public double SeaRate
+        {
+            get
+            {
+                return _seaLevel;
+            }
+        }
+
+        private int _politicPoints = 3;
+        public int PoliticPoints
+        {
+            get
+            {
+                return _politicPoints;
+            }
+            set
+            {
+                _politicPoints++;
+            }
+        }
+
+        private double _polarCaps;
+        public double PolarCap
+        {
+            get
+            {
+                return _polarCaps;
+            }
+        }
 
 
         public void AdvanceMonth(string month)
         {
             _indexMonth++;
-            CurrentMonth = Month[_indexMonth]; 
+            CurrentMonth = Month[_indexMonth];
         }
     }
 }
