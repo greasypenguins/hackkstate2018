@@ -16,8 +16,11 @@ namespace YeetTheEarth
 
         public EventGenerator(Earth _earth)
         {
-            //Add each possible event
-            _allEvents.Add(new EventPopulationExplosion(_earth));
+            _allEvents = new List<IEvent>();
+            _remainingEvents = new List<IEvent>();
+
+        //Add each possible event
+        _allEvents.Add(new EventPopulationExplosion(_earth));
             _allEvents.Add(new EventSolarTechImprovement(_earth));
             //...
 

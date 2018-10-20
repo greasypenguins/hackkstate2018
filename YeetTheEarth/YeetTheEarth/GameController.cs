@@ -11,12 +11,16 @@ namespace YeetTheEarth
         private Player _player;
         private Earth _earth;
         private EventGenerator _eventGenerator;
+        private List<IEvent> _activeEvents;
+        private Random _randomizer;
 
         public GameController()
         {
             _player = new Player();
             _earth = new Earth();
-            _eventGenerator = new EventGenerator();
+            _eventGenerator = new EventGenerator(_earth);
+            _activeEvents = new List<IEvent>();
+            _randomizer = new Random();
 
             _player.ShowGameIntroMessage();
 
@@ -32,11 +36,33 @@ namespace YeetTheEarth
                 _player.Show(String.Format("Global GDP: ${}", _earth.GDP));
                 
                 //Generate random events sometimes
-                //If there is an event in effect:
-                    //For each event:
+                
+                //Handle all active events
+                if(_activeEvents.Count > 0)
+                {
+                    //Advance each event one month
+                    for( int i = 0; i < _activeEvents.Count; i++)
+                    {
+                        IEvent thisEvent = _activeEvents[i];
+                        //Show event info
+                        _player.ShowEventInfo(thisEvent.Name, thisEvent.Description);
+
                         //Show player event message for this month
+                        _player.ShowEventUpdate(thisEvent.NextMonth());
+
                         //Get choice from player
-                        //Advance event one month
+                        _player.ShowEventResult(thisEvent.ChooseOption(_player.GetChoice()));
+                    }
+
+                    //Remove events that are done
+                    for (int i = _activeEvents.Count - 1; i >= 0; i--)
+                    {
+                        if(_activeEvents[i].MonthsLeft <= 0)
+                        {
+                            _activeEvents.RemoveAt(i);
+                        }
+                    }
+                }
 
                 //Show player normal monthly options
                 //Get decisions from player
