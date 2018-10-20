@@ -6,19 +6,12 @@ using System.Threading.Tasks;
 
 namespace YeetTheEarth
 {
-    class EventEconomicCrisis : IEvent
+    class EventThorumPower : IEvent
     {
         private Earth _earth;
 
         private string[] _options = {
-            "Invest in Coal.",
-            "Invest in Solar.",
-            "Invest in Wind",
-            "Invest in Nuclear",
-            "Invest in Natural Gas",
-            "Invest in Geothermic",
-            "Invest in Hydro",
-            "Impliment a energy program to teach about energy conservation",
+            "Make Thorium Power Plants.",
             "Do Nothing."};
 
         private string _name = "Energy Crisis";
@@ -60,12 +53,12 @@ namespace YeetTheEarth
 
         }
 
-            public string ChooseOption(int option) //Choose one of the options and get the result
+        public string ChooseOption(int option) //Choose one of the options and get the result
         {
             throw new NotImplementedException();
         }
 
-        public EventEconomicCrisis(Earth earth)
+        public EventThorumPower(Earth earth)
         {
             _earth = earth;
         }
