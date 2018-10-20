@@ -10,6 +10,12 @@ namespace YeetTheEarth
     {
         private Earth _earth;
 
+        private string _options = string.Join("\n",
+            "[1] Do nothing.",
+            "[2] Invest in family planning.",
+            "[3] Implement two child policy.",
+            "[4] Remove part of the population.");
+
         private string _name = "Population Explosion";
         public string Name //Name of event
         {
@@ -30,7 +36,8 @@ namespace YeetTheEarth
             }
         }
 
-        int _monthsLeft = 3; //Total length of event
+        private static int _totalMonths = 3; //Total length of event
+        private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
             get
@@ -46,9 +53,27 @@ namespace YeetTheEarth
 
         public string NextMonth() //Advance the event one month and get a message
         {
-            _monthsLeft--;
+            string ret;
+
+            switch (_monthsLeft)
+            {
+                case 3:
+                    ret = _options;
+                    break;
+                case 2:
+                    ret = "";
+                    break;
+                case 1:
+                    ret = "";
+                    break;
+                default:
+                    ret = "";
+                    break;
+            }
 
             throw new NotImplementedException();
+            _monthsLeft--;
+            return ret;
         }
 
         public EventPopulationExplosion(Earth earth)

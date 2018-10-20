@@ -10,6 +10,10 @@ namespace YeetTheEarth
     {
         private Earth _earth;
 
+        private string _options = string.Join("\n",
+            "[1] Do nothing.",
+            "[2] Do something.");
+
         private string _name = "Solar Technology Improvement";
         public string Name //Name of event
         {
@@ -30,7 +34,8 @@ namespace YeetTheEarth
             }
         }
 
-        int _monthsLeft = 3; //Total length of event
+        private static int _totalMonths = 3; //Total length of event
+        private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
             get
@@ -46,9 +51,11 @@ namespace YeetTheEarth
 
         public string NextMonth() //Advance the event one month and get a message
         {
-            _monthsLeft--;
+            string ret;
 
             throw new NotImplementedException();
+            _monthsLeft--;
+            return ret;
         }
 
         public EventSolarTechImprovement(Earth earth)
