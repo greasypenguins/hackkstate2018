@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.
 
 namespace YeetTheEarth
 {
@@ -19,17 +18,45 @@ namespace YeetTheEarth
             }
             set
             {
-                _temp = GetRandomNumber(0, 160);
+                _temp = 42;
             }
         }
 
-
-
-
-        static Random random = new Random();
-        public double GetRandomNumber(double minimum, double maximum)
+        private string[] _month;
+        private int _indexMonth = 1;
+        private string _currentMonth;
+        public string CurrentMonth
         {
-            return random.NextDouble() * (maximum - minimum) + minimum;
+            get
+            {
+                return _currentMonth;
+            }
+            set
+            {
+                _currentMonth = Month[_indexMonth];
+            }
+        }
+
+        public string[] Month
+        {
+            get
+            {
+                return _month;
+            }
+            set
+            {
+                _month = new string[12] {"January", "February", "March", "April", "May","June", "July", "August", "September","October" , "November", "December"};
+                
+
+            }
+        }
+        
+
+
+        public void AdvanceMonth(string month)
+        {
+            _indexMonth++;
+            CurrentMonth = Month[_indexMonth]; 
         }
     }
 }
