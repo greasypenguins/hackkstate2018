@@ -9,7 +9,7 @@ namespace YeetTheEarth
     class Earth
     {
         public int Year = 2016;
-        private double _temp;
+        private double _temp = 1.87;
         public double Temp
         {
             get
@@ -18,7 +18,7 @@ namespace YeetTheEarth
             }
             set
             {
-                _temp = 42;
+                _temp = value;
             }
         }
 
@@ -50,16 +50,20 @@ namespace YeetTheEarth
 
             }
         }
-        private double _tempRate;
+        private double _tempRate = .025;
         public double TempRate
         {
             get
             {
                 return _tempRate;
             }
+            set
+            {
+                _tempRate = value;
+            }
         }
 
-        private double _co2Con;
+        private double _co2Con = 402.52;
         public double Co2Con
         {
             get
@@ -68,48 +72,68 @@ namespace YeetTheEarth
             }
         }
 
-        private double _co2Rate;
+        private double _co2Rate = .0036;
         public double Co2Rate
         {
             get
             {
                 return _co2Rate;
             }
+            set
+            {
+                _co2Rate = value;
+            }
         }
 
-        private double _gdp;
+        private double _gdp = 79865481;
         public double GDP
         {
             get
             {
                 return _gdp;
             }
+            set
+            {
+                _gdp = value;
+            }
         }
 
-        private int _population;
+        private int _population = 7466964280;
         public int Population
         {
             get
             {
                 return _population;
             }
+            set
+            {
+                _population = value;
+            }
         }
 
-        private int _seaLevel;
-        public int SeaLevel
+        private double _seaLevel = 82.8;
+        public double SeaLevel
         {
             get
             {
                 return _seaLevel;
             }
+            set
+            {
+                _seaLevel = value;
+            }
         }
 
-        private double _seaRate;
+        private double _seaRate = .04;
         public double SeaRate
         {
             get
             {
                 return _seaLevel;
+            }
+            set
+            {
+                _seaLevel = value;
             }
         }
 
@@ -122,7 +146,7 @@ namespace YeetTheEarth
             }
             set
             {
-                _politicPoints++;
+                _politicPoints  = value;
             }
         }
 
@@ -132,6 +156,10 @@ namespace YeetTheEarth
             get
             {
                 return _polarCaps;
+            }
+            set
+            {
+                _polarCaps = value;
             }
         }
 
