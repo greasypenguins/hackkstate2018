@@ -8,16 +8,16 @@ namespace YeetTheEarth
 {
     class Energy
     {
-        private double _co2Rate = 0.25; //PPM/month (parts per million per month)
+        private double _co2RateConstant = 0.25; //PPM/month (parts per million per month)
         public double Co2Rate
         {
             get
             {
-                return _co2Rate;
+                return _co2RateConstant * _relativeEnergyProduction;
             }
             set
             {
-                _co2Rate = value;
+                _co2RateConstant = value / _relativeEnergyProduction;
             }
         }
 
@@ -130,11 +130,108 @@ namespace YeetTheEarth
             
         }
 
-        public void ModifyOilUse(double modifier)
+        //Private because it's used when percents don't add up to 100%
+        private double SumPercents()
+        {
+            return (_percentOil + _percentCoal + _percentNaturalGas + _percentWaste + _percentNuclear + _percentHydro + _percentRenewable)
+        }
+
+        //Private because it multiplies all percents so it will be over/under 100%
+        private void ModifyPercents(double modifier)
         {
             _percentOil *= modifier;
+            _percentCoal *= modifier;
+            _percentNaturalGas *= modifier;
+            _percentWaste *= modifier;
+            _percentNuclear *= modifier;
+            _percentHydro *= modifier;
+            _percentRenewable *= modifier;
+        }
 
+        public void ModifyOilUse(double modifier)
+        {
+            double otherModifier;
 
+            _percentOil *= modifier;
+
+            //otherModifier = goal_all_other_percents / all_other_percents
+            otherModifier = (1 - _percentOil) / (SumPercents() - _percentOil);
+
+            ModifyPercents(otherModifier);
+            _percentOil /= otherModifier; //Correction
+        }
+
+        public void ModifyCoalUse(double modifier)
+        {
+            double otherModifier;
+
+            _percentCoal *= modifier;
+
+            //otherModifier = goal_all_other_percents / all_other_percents
+            otherModifier = (1 - _percentCoal) / (SumPercents() - _percentCoal);
+
+            ModifyPercents(otherModifier);
+            _percentOil /= otherModifier; //Correction
+        }
+        public void ModifyNaturalGasUse(double modifier)
+        {
+            double otherModifier;
+
+            _percentNaturalGas *= modifier;
+
+            //otherModifier = goal_all_other_percents / all_other_percents
+            otherModifier = (1 - _percentNaturalGas) / (SumPercents() - _percentNaturalGas);
+
+            ModifyPercents(otherModifier);
+            _percentNaturalGas /= otherModifier; //Correction
+        }
+        public void ModifyWasteUse(double modifier)
+        {
+            double otherModifier;
+
+            _percentWaste *= modifier;
+
+            //otherModifier = goal_all_other_percents / all_other_percents
+            otherModifier = (1 - _percentWaste) / (SumPercents() - _percentWaste);
+
+            ModifyPercents(otherModifier);
+            _percentWaste /= otherModifier; //Correction
+        }
+        public void ModifyNuclearUse(double modifier)
+        {
+            double otherModifier;
+
+            _percentNuclear *= modifier;
+
+            //otherModifier = goal_all_other_percents / all_other_percents
+            otherModifier = (1 - _percentNuclear) / (SumPercents() - _percentNuclear);
+
+            ModifyPercents(otherModifier);
+            _percentNuclear /= otherModifier; //Correction
+        }
+        public void ModifyHydroUse(double modifier)
+        {
+            double otherModifier;
+
+            _percentHydro *= modifier;
+
+            //otherModifier = goal_all_other_percents / all_other_percents
+            otherModifier = (1 - _percentHydro) / (SumPercents() - _percentHydro);
+
+            ModifyPercents(otherModifier);
+            _percentHydro /= otherModifier; //Correction
+        }
+        public void ModifyRenewableUse(double modifier)
+        {
+            double otherModifier;
+
+            _percentRenewable *= modifier;
+
+            //otherModifier = goal_all_other_percents / all_other_percents
+            otherModifier = (1 - _percentRenewable) / (SumPercents() - _percentRenewable);
+
+            ModifyPercents(otherModifier);
+            _percentRenewable /= otherModifier; //Correction
         }
     }
 }
