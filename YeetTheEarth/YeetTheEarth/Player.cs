@@ -30,6 +30,16 @@ namespace YeetTheEarth
             WriteLineWrap(s);
         }
 
+        public void ShowWin()
+        {
+            WriteLineWrap("Congrats you won.");
+        }
+
+        public void ShowLose()
+        {
+            WriteLineWrap("Congrats you lost.");
+        }
+
         public void ShowYear(int year)
         {
             Console.WriteLine("Year: " + year.ToString());
