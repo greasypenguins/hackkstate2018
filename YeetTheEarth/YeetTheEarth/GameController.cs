@@ -24,8 +24,8 @@ namespace YeetTheEarth
                 _player.Show(String.Format("Year: {}", _earth.Year));
                 _player.Show(String.Format("Month: {}", _earth.Month));
                 _player.Show(String.Format("Population: {} people", _earth.Population));
-                _player.Show(String.Format("Political Capital: {} points", _earth.PoliticalCapital));
-                _player.Show(String.Format("Average Temperature: {} °C", _earth.Temperature));
+                _player.Show(String.Format("Political Capital: {} points", _earth.PoliticPoints));
+                _player.Show(String.Format("Average Temperature: {} °C", _earth.Temp));
                 _player.Show(String.Format("Sea Level: {} m", _earth.SeaLevel));
                 _player.Show(String.Format("Global GDP: ${}", _earth.GDP));
                 
@@ -39,7 +39,7 @@ namespace YeetTheEarth
                 //Show player normal monthly options
                 //Get decisions from player
 
-                _earth.NextMonth();
+                _earth.AdvanceMonth();
             }
         }
     }

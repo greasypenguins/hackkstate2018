@@ -8,8 +8,8 @@ namespace YeetTheEarth
 {
     class Earth
     {
+        public int Year = 2016;
         private double _temp;
-
         public double Temp
         {
             get
@@ -136,7 +136,7 @@ namespace YeetTheEarth
         }
 
 
-        public void AdvanceMonth(string month)
+        public void AdvanceMonth()
         {
             _indexMonth++;
             CurrentMonth = Month[_indexMonth];

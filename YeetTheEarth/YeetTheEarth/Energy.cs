@@ -8,6 +8,16 @@ namespace YeetTheEarth
 {
     class Energy
     {
+        public double _rate;
+        public Energy(Energy e, double rate)
+        {
+            _rate = rate;
+        }
+
+    }
+    class EnergySource
+    {
+
         private Energy _solar;
         public Energy Solar
         {
@@ -50,12 +60,5 @@ namespace YeetTheEarth
             get;
             set;
         }
-
-
-        public Energy(Energy e)
-        {
-
-        }
-
     }
 }

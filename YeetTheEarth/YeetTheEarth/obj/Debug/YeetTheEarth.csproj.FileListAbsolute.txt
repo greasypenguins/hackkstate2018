@@ -5,3 +5,7 @@ C:\Users\steph\Source\Repos\hackkstate2018\YeetTheEarth\YeetTheEarth\obj\Debug\Y
 C:\Users\steph\Source\Repos\hackkstate2018\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.csproj.CoreCompileInputs.cache
 C:\Users\steph\Source\Repos\hackkstate2018\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.exe
 C:\Users\steph\Source\Repos\hackkstate2018\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.pdb
+C:\Users\karka\Source\Repos\hackkstate20182\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.csprojResolveAssemblyReference.cache
+C:\Users\karka\Source\Repos\hackkstate20182\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.csproj.CoreCompileInputs.cache
+C:\Users\karka\Source\Repos\hackkstate20182\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.exe
+C:\Users\karka\Source\Repos\hackkstate20182\YeetTheEarth\YeetTheEarth\obj\Debug\YeetTheEarth.pdb
