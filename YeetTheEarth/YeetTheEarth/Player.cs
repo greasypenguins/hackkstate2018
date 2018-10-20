@@ -8,6 +8,8 @@ namespace YeetTheEarth
 {
     class Player
     {
+        private int _consoleWidth = 100;
+
         public void ShowGameIntroMessage()
         {
             Console.WriteLine("The year is 2016 and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference.\n The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. \nBecause of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
@@ -67,6 +69,29 @@ namespace YeetTheEarth
         public void ShowEventResult(string eventResult)
         {
             Console.WriteLine("Result: " + eventResult);
+        }
+
+        private void WriteLineWrap(string output)
+        {
+            if(output.Length <= _consoleWidth)
+            {
+                Console.WriteLine(output);
+            }
+            else
+            {
+                string[] words = output.Split(' ');
+
+                int currentWordsLength = 0;
+                int remainingWordsLength = 0;
+
+                Stack<string> currentWords = new Stack<string>();
+                Stack<string> remainingWords = new Stack<string>();
+
+                while(currentWordsLength < _consoleWidth)
+                {
+
+                }
+            }
         }
     }
 }
