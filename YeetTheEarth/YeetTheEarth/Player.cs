@@ -27,9 +27,30 @@ namespace YeetTheEarth
             Console.Write(s);
         }
 
-        public string GetInput()
+        public void GetInput(string s)
         {
             
+            Console.Write(s);
+            var type = Console.ReadLine();
+        }
+
+        public void ShowEventInfo(string name, string description)
+        {
+
+        }
+
+        public void ShowEventUpdate(string month)
+        {
+
+        }
+
+        public void ShowEventResult(string s)
+        {
+
+        }
+        public int GetChoice()
+        {
+            return 1;
         }
     }
 }
