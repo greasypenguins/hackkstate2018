@@ -33,7 +33,7 @@ namespace YeetTheEarth
             }
         }
 
-        private int _year = 2016;
+        private int _year = 2018;
         public int Year
         {
             get
@@ -48,7 +48,7 @@ namespace YeetTheEarth
 
         private string[] _months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
-        private int _monthIndex = 0; //Start in January
+        private int _monthIndex = 9; //Start in October
         public int MonthIndex
         {
             get
@@ -108,16 +108,15 @@ namespace YeetTheEarth
             }
         }
 
-        private double _co2Rate = 0.25; //PPM/month (parts per million per month)
         public double Co2Rate
         {
             get
             {
-                return _co2Rate;
+                return _energy.Co2Rate;
             }
             set
             {
-                _co2Rate = value;
+                _energy.Co2Rate = value;
             }
         }
 
@@ -205,6 +204,8 @@ namespace YeetTheEarth
             }
         }
 
+        private Energy _energy;
+
         public void NextMonth()
         {
             _monthsElapsed++;
@@ -215,15 +216,16 @@ namespace YeetTheEarth
             }
 
             _temp += _tempRate;
-            _co2Con += Co2Rate;
+            _co2Con += _energy.Co2Rate;
             _seaLevel += _seaRate;
             _landPercentLost += _landPercentLossRateConstant * _seaRate;
             _politicalPoints += _politicalPointsRate;
+            _tempRate += _energy.Co2Rate / (double)10000000;
         }
 
         public Earth()
         {
-
+            _energy = new Energy();
         }
     }
 }

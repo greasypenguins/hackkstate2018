@@ -8,57 +8,133 @@ namespace YeetTheEarth
 {
     class Energy
     {
-        public double _rate;
-        public Energy(Energy e, double rate)
+        private double _co2Rate = 0.25; //PPM/month (parts per million per month)
+        public double Co2Rate
         {
-            _rate = rate;
+            get
+            {
+                return _co2Rate;
+            }
+            set
+            {
+                _co2Rate = value;
+            }
         }
 
-    }
-    class EnergySource
-    {
+        private double _relativeEnergyProduction = 1; //Relative to start of game
+        public double RelativeEnergyProduction
+        {
+            get
+            {
+                return _relativeEnergyProduction;
+            }
+            set
+            {
+                _relativeEnergyProduction = value;
+            }
+        }
 
-        private Energy _solar;
-        public Energy Solar
+        private double _percentOil = 0.313;
+        public double PercentOil
         {
-            get;
-            set;
+            get
+            {
+                return _percentOil;
+            }
+            set
+            {
+                _percentOil = value;
+            }
         }
-        private Energy _hydro;
-        public Energy Hydro
+
+        private double _percentCoal = 0.286;
+        public double PercentCoal
         {
-            get;
-            set;
+            get
+            {
+                return _percentCoal;
+            }
+            set
+            {
+                _percentCoal = value;
+            }
         }
-        private Energy _geothermic;
-        public Energy Geothermic
+
+        private double _percentNaturalGas = 0.212;
+        public double PercentNaturalGas
         {
-            get;
-            set;
+            get
+            {
+                return _percentNaturalGas;
+            }
+            set
+            {
+                _percentNaturalGas = value;
+            }
         }
-        private Energy _wind;
-        public Energy Wind
+
+        private double _percentWaste = 0.103;
+        public double PercentWaste
         {
-            get;
-            set;
+            get
+            {
+                return _percentWaste;
+            }
+            set
+            {
+                _percentWaste = value;
+            }
         }
-        private Energy _nuclear;
-        public Energy Nuclear
+
+        private double _percentNuclear = 0.048;
+        public double PercentNuclear
         {
-            get;
-            set;
+            get
+            {
+                return _percentNuclear;
+            }
+            set
+            {
+                _percentNuclear = value;
+            }
         }
-        private Energy _coal;
-        public Energy Coal
+
+        private double _percentHydro = 0.024;
+        public double PercentHydro
         {
-            get;
-            set;
+            get
+            {
+                return _percentHydro;
+            }
+            set
+            {
+                _percentHydro = value;
+            }
         }
-        private Energy _naturalGas;
-        public Energy NaturalGas
+
+        private double _percentRenewable = 0.014;
+        public double PercentRenewable
         {
-            get;
-            set;
+            get
+            {
+                return _percentRenewable;
+            }
+            set
+            {
+                _percentRenewable = value;
+            }
+        }
+
+        public Energy()
+        {
+            
+        }
+
+        public void ModifyOilUse(double modifier)
+        {
+            _percentOil *= modifier;
+
+
         }
     }
 }
