@@ -53,6 +53,22 @@ namespace YeetTheEarth
         {
             string ret;
 
+            switch (_monthsLeft)
+            {
+                case 3:
+                    ret = _options;
+                    break;
+                case 2:
+                    ret = "";
+                    break;
+                case 1:
+                    ret = "";
+                    break;
+                default:
+                    ret = "";
+                    break;
+            }
+
             throw new NotImplementedException();
             _monthsLeft--;
             return ret;
