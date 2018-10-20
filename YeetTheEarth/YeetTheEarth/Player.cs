@@ -8,26 +8,49 @@ namespace YeetTheEarth
 {
     class Player
     {
-        private int _consoleWidth = 100;
+        private int _consoleWidth = 80;
 
         public void ShowGameIntroMessage()
         {
-            Console.WriteLine("The year is 2016 and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference.\n The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. \nBecause of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
-            Console.WriteLine(" ");
-            Console.WriteLine("This is where you come in. As a member of the IPCC, with your expertise in global warming, the UN has come to you for guidance. \nYou are now in charge of how the world reacts to random events that are making global warming worse.");
-            Console.WriteLine(" ");
-            Console.WriteLine("Your goal is to get the Earth to a “stable/no threat” condition. \nCurrently it stands at the “moderate/some threat” condition. \nIf you do not act properly, the Earth’s condition will become “severe/high threat”. If this occurs, Earth will become unable to support any life and humanity will end.");
-            Console.WriteLine(" ");
-            Console.WriteLine("Each month new problems may occur, and you will be given the reason as to why this occurs and why it’s bad for Earth. \nThen you will be given multiple options to react to the event. \nDepending on your decisions, things like the temperature and population will be affected, as well as the overall condition of Earth.");
-            Console.WriteLine(" ");
-            Console.WriteLine("It’s up to you to understand and stop global warming so we can continue to inhabit Earth. Good luck.");
-            Console.WriteLine(" ");
+            WriteLineWrap("The year is 2016 and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference.\n The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. \nBecause of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
+            WriteLineWrap(" ");
+            WriteLineWrap("This is where you come in. As a member of the IPCC, with your expertise in global warming, the UN has come to you for guidance. \nYou are now in charge of how the world reacts to random events that are making global warming worse.");
+            WriteLineWrap(" ");
+            WriteLineWrap("Your goal is to get the Earth to a “stable/no threat” condition. \nCurrently it stands at the “moderate/some threat” condition. \nIf you do not act properly, the Earth’s condition will become “severe/high threat”. If this occurs, Earth will become unable to support any life and humanity will end.");
+            WriteLineWrap(" ");
+            WriteLineWrap("Each month new problems may occur, and you will be given the reason as to why this occurs and why it’s bad for Earth. \nThen you will be given multiple options to react to the event. \nDepending on your decisions, things like the temperature and population will be affected, as well as the overall condition of Earth.");
+            WriteLineWrap(" ");
+            WriteLineWrap("It’s up to you to understand and stop global warming so we can continue to inhabit Earth. Good luck.");
+            WriteLineWrap(" ");
         }
 
         public void Show(string s)
         {
-            Console.Write("\n"+ s);
+            WriteLineWrap(s);
         }
+
+        public void ShowYear(int year)
+        {
+            Console.WriteLine("Year: " + year.ToString());
+        }
+
+        public void ShowMonth(string month)
+        {
+            Console.WriteLine("Month: " + month);
+        }
+        
+        public void ShowPopulation(long population)
+        {
+            Console.WriteLine("Population: " + population + " people");
+        }
+
+        public void
+
+        _player.ShowPopulation(string.Format("Population: {0} people", _earth.Population));
+        _player.ShowPoliticalPoints(string.Format("Political Points: {0} points", _earth.PoliticalPoints));
+        _player.ShowTemperature("Average Temperature: {0} °C", _earth.Temp);
+        _player.ShowSeaLevel("Sea Level: " + _earth.SeaLevel.ToString() + " m");
+        _player.ShowGDP("Global GDP: " + _earth.GDP.ToString("C3", new CultureInfo("en-US")));
 
         public int GetChoice()
         {
@@ -53,8 +76,8 @@ namespace YeetTheEarth
 
         public void ShowEventInfo(string eventName, string eventDescription)
         {
-            Console.WriteLine("Event: " + eventName);
-            Console.WriteLine("Description: " + eventDescription);
+            WriteLineWrap("Event: " + eventName);
+            WriteLineWrap("Description: " + eventDescription);
         }
 
         public void ShowEventOptions(string[] eventOptions)
@@ -62,36 +85,87 @@ namespace YeetTheEarth
             Console.WriteLine("What will you do?");
             for(int i = 0; i < eventOptions.Length; i++)
             {
-                Console.WriteLine("[{0}] {1}", (i + 1).ToString(), eventOptions[i]);
+                WriteLineWrap(string.Format("[{0}] {1}", (i + 1).ToString(), eventOptions[i]));
             }
         }
 
         public void ShowEventResult(string eventResult)
         {
-            Console.WriteLine("Result: " + eventResult);
+            WriteLineWrap("Result: " + eventResult);
         }
 
         private void WriteLineWrap(string output)
         {
-            if(output.Length <= _consoleWidth)
+            string[] words;
+            string word;
+            int currentWordsLength;
+            int remainingWordsLength;
+            Stack<string> currentWords; //Top of stack is last word to print
+            Stack<string> remainingWords; //Top of stack is first word to print
+            Stack<string> outputWords;
+
+            if (output.Length <= _consoleWidth)
             {
                 Console.WriteLine(output);
             }
             else
             {
-                string[] words = output.Split(' ');
+                words = output.Split(' ');
 
-                int currentWordsLength = 0;
-                int remainingWordsLength = 0;
+                remainingWords = new Stack<string>();
+                remainingWordsLength = 0;
 
-                Stack<string> currentWords = new Stack<string>();
-                Stack<string> remainingWords = new Stack<string>();
-
-                while(currentWordsLength < _consoleWidth)
+                for(int i = words.Length - 1; i >= 0; i--)
                 {
-
+                    words[i] = words[i] + " "; //All words have a space at the end but oh well it saves math
+                    remainingWords.Push(words[i]);
+                    remainingWordsLength += words[i].Length;
                 }
+
+                do
+                {
+                    currentWords = new Stack<string>();
+                    currentWordsLength = 0;
+
+                    while ((currentWordsLength < _consoleWidth) && (remainingWords.Count > 0))
+                    {
+                        word = remainingWords.Pop();
+                        remainingWordsLength -= word.Length;
+
+                        currentWords.Push(word);
+                        currentWordsLength += word.Length;
+                    }
+
+                    if ((currentWordsLength > _consoleWidth) && (currentWords.Count > 1))
+                    {
+                        word = currentWords.Pop();
+                        currentWordsLength -= word.Length;
+
+                        remainingWords.Push(word);
+                        remainingWordsLength += word.Length;
+                    }
+
+                    outputWords = ReverseStack(currentWords);
+                    while(outputWords.Count > 0)
+                    {
+                        Console.Write(outputWords.Pop());
+                    }
+                    Console.WriteLine();
+                } while (remainingWords.Count > 0);
             }
+        }
+
+
+        private Stack<T> ReverseStack<T>(Stack<T> inputStack)
+        {
+            Stack<T> outputStack = new Stack<T>();
+
+            while(inputStack.Count > 0)
+            {
+                outputStack.Push(inputStack.Pop());
+            }
+
+            return outputStack;
         }
     }
 }

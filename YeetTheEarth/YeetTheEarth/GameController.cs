@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,13 +30,13 @@ namespace YeetTheEarth
             while(_earth.Population > 0)
             {
                 //Show stuff about Earth's current state
-                _player.Show(string.Format("Year: {0}", _earth.Year));
-                _player.Show(string.Format("Month: {0}", _earth.Month));
-                _player.Show(string.Format("Population: {0} people", _earth.Population));
-                _player.Show(string.Format("Political Capital: {0} points", _earth.PoliticPoints));
-                _player.Show(string.Format("Average Temperature: {0} °C", _earth.Temp));
-                _player.Show(string.Format("Sea Level: {0} m", _earth.SeaLevel));
-                _player.Show(string.Format("Global GDP: ${0}", _earth.GDP));
+                _player.ShowYear(string.Format("Year: {0}", _earth.Year));
+                _player.ShowMonth(string.Format("Month: {0}", _earth.CurrentMonth));
+                _player.ShowPopulation(string.Format("Population: {0} people", _earth.Population));
+                _player.ShowPoliticalPoints(string.Format("Political Points: {0} points", _earth.PoliticalPoints));
+                _player.ShowTemperature("Average Temperature: {0} °C", _earth.Temp);
+                _player.ShowSeaLevel("Sea Level: " + _earth.SeaLevel.ToString() + " m");
+                _player.ShowGDP("Global GDP: " + _earth.GDP.ToString("C3", new CultureInfo("en-US")));
                 
                 //Generate random events sometimes
                 if(_randomizer.Next(100) < _eventGenerationChance)
@@ -73,7 +74,7 @@ namespace YeetTheEarth
                 //Show player normal monthly options
                 //Get decisions from player
 
-                _earth.AdvanceMonth();
+                _earth.NextMonth();
             }
         }
     }
