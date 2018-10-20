@@ -10,6 +10,7 @@ namespace YeetTheEarth
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
