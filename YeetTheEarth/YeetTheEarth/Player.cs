@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,17 +42,29 @@ namespace YeetTheEarth
         
         public void ShowPopulation(long population)
         {
-            Console.WriteLine("Population: " + population + " people");
+            Console.WriteLine("Population: " + population.ToString() + " people");
         }
 
-        public void
+        public void ShowPoliticalPoints(int points)
+        {
+            Console.WriteLine("Political points: " + points.ToString() + " points");
+        }
 
-        _player.ShowPopulation(string.Format("Population: {0} people", _earth.Population));
-        _player.ShowPoliticalPoints(string.Format("Political Points: {0} points", _earth.PoliticalPoints));
-        _player.ShowTemperature("Average Temperature: {0} °C", _earth.Temp);
-        _player.ShowSeaLevel("Sea Level: " + _earth.SeaLevel.ToString() + " m");
-        _player.ShowGDP("Global GDP: " + _earth.GDP.ToString("C3", new CultureInfo("en-US")));
+        public void ShowTemperature(double temperature)
+        {
+            Console.WriteLine("Global Mean Temperature: " + temperature.ToString() + " °C");
+        }
 
+        public void ShowSeaLevel(double seaLevel)
+        {
+            Console.WriteLine("Sea Level: " + seaLevel.ToString() + " m");
+        }
+
+        public void ShowGDP(decimal gdp)
+        {
+            Console.WriteLine("Global GDP: " + gdp.ToString("C3", new CultureInfo("en-US")));
+        }
+        
         public int GetChoice()
         {
             Boolean valid = false;

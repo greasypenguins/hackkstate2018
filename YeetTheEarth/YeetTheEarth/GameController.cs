@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,13 +29,13 @@ namespace YeetTheEarth
             while(_earth.Population > 0)
             {
                 //Show stuff about Earth's current state
-                _player.ShowYear(string.Format("Year: {0}", _earth.Year));
-                _player.ShowMonth(string.Format("Month: {0}", _earth.CurrentMonth));
-                _player.ShowPopulation(string.Format("Population: {0} people", _earth.Population));
-                _player.ShowPoliticalPoints(string.Format("Political Points: {0} points", _earth.PoliticalPoints));
-                _player.ShowTemperature("Average Temperature: {0} °C", _earth.Temp);
-                _player.ShowSeaLevel("Sea Level: " + _earth.SeaLevel.ToString() + " m");
-                _player.ShowGDP("Global GDP: " + _earth.GDP.ToString("C3", new CultureInfo("en-US")));
+                _player.ShowYear(_earth.Year);
+                _player.ShowMonth(_earth.CurrentMonth);
+                _player.ShowPopulation(_earth.Population);
+                _player.ShowPoliticalPoints(_earth.PoliticalPoints);
+                _player.ShowTemperature(_earth.Temp);
+                _player.ShowSeaLevel(_earth.SeaLevel);
+                _player.ShowGDP(_earth.GDP);
                 
                 //Generate random events sometimes
                 if(_randomizer.Next(100) < _eventGenerationChance)
