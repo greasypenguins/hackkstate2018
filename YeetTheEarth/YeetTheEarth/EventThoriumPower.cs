@@ -54,12 +54,12 @@ namespace YeetTheEarth
             StringBuilder reaction = new StringBuilder();
             switch (option)
             {
-                case 1:
+                case 1: //power plants
                     _earth.GDP = _earth.GDP - 3000000000;
-                    _earth.Energy.PercentNuclear = _earth.Energy.PercentNuclear + .5;
+                    _earth.Energy.ModifyNuclearUse(.5);
                     _earth.Co2Rate = _earth.Co2Rate - 0.5;
                     _earth.Population = _earth.Population - 30000000;
-                    reaction.Append("You have spent $3,000,000,000 on new nuclear plants");
+                    reaction.Append("\nYou have spent $3,000,000,000 on new nuclear plants");
                     reaction.Append("\nThe percent of Nuclear power has increased.");
                     reaction.Append("\nThe rate of CO2 concentrasion rise has decreased.");
                     reaction.Append("\nA nuclear reactor eploded and killed 30,000,000 people.");

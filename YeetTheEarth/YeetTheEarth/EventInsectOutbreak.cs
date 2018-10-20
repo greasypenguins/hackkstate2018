@@ -6,22 +6,16 @@ using System.Threading.Tasks;
 
 namespace YeetTheEarth
 {
-    class EventEconomicCrisis : IEvent
+    class EventInsectOutbreak : IEvent
     {
         private Earth _earth;
 
         private string[] _options = {
-            "Invest in Coal.",
-            "Invest in Renewable",
-            "Invest in Wind",
-            "Invest in Nuclear",
-            "Invest in Natural Gas",
-            "Invest in Geothermic",
-            "Invest in Hydro",
-            "Impliment a energy program to teach about energy conservation",
-            "Do Nothing."};
+            "Make Thorium Power Plants.",
+            "Do Nothing.",
+            "whatever"};
 
-        private string _name = "Energy Crisis";
+        private string _name = "Insect Outbreak";
         public string Name //Name of event
         {
             get
@@ -52,50 +46,33 @@ namespace YeetTheEarth
         }
         public string[] NextMonth() //Advance the event one month and get options
         {
-            string[] ret;
             _earth.NextMonth();
-
             return _options;
-
-
         }
 
         public string ChooseOption(int option) //Choose one of the options and get the result
         {
             StringBuilder reaction = new StringBuilder();
-
             switch (option)
             {
-                case 1://coal
-                    _earth.Energy.ModifyCoalUse(-.5);
-                    reaction.Append("Coal Use rate decreased.");
+                case 1:
+                    _earth.GDP = _earth.GDP - 3000000000;
+                    _earth.Energy.ModifyNuclearUse(.5);
+                    _earth.Co2Rate = _earth.Co2Rate - 0.5;
+                    _earth.Population = _earth.Population - 30000000;
+                    reaction.Append("You have spent $3,000,000,000 on new nuclear plants");
+                    reaction.Append("\nThe percent of Nuclear power has increased.");
+                    reaction.Append("\nThe rate of CO2 concentrasion rise has decreased.");
+                    reaction.Append("\nA nuclear reactor eploded and killed 30,000,000 people.");
                     break;
-                case 2://solar
-                    
+                case 2:
+                    reaction.Append("\nNothing happened.");
                     break;
-                case 3://wind
-                    break;
-                case 4://nuclear
-                    break;
-                case 5://natural gas
-                    break;
-                case 6://geothermic
-                    break;
-                case 7://hydro
-                    _earth.Energy.ModifyHydroUse(-.5);
-                    break;
-                case 8://energy program
-                    
-                    break;
-                case 9://nothing
-                    break;
-
-
             }
             return reaction.ToString();
         }
 
-        public EventEconomicCrisis(Earth earth)
+        public EventInsectOutbreak(Earth earth)
         {
             _earth = earth;
         }
