@@ -52,17 +52,17 @@ namespace YeetTheEarth
 
         public void ShowTemperature(double temperature)
         {
-            Console.WriteLine("Global Mean Temperature: " + temperature.ToString() + " °C");
+            Console.WriteLine("Global Mean Temperature: " + Math.Round(Convert.ToDecimal(temperature), 3).ToString() + " °C");
         }
 
         public void ShowSeaLevel(double seaLevel)
         {
-            Console.WriteLine("Sea Level: " + seaLevel.ToString() + " m");
+            Console.WriteLine("Sea Level: " + Math.Round(Convert.ToDecimal(seaLevel), 4).ToString() + " m");
         }
 
         public void ShowGDP(decimal gdp)
         {
-            Console.WriteLine("Global GDP: " + gdp.ToString("C3", new CultureInfo("en-US")));
+            Console.WriteLine("Global GDP: " + gdp.ToString("C", new CultureInfo("en-US")));
         }
         
         public int GetChoice()
