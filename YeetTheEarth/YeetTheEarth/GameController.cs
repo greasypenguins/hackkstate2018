@@ -27,13 +27,13 @@ namespace YeetTheEarth
             while(_earth.Population > 0)
             {
                 //Show stuff about Earth's current state
-                _player.Show(String.Format("Year: {0}", _earth.Year));
-                _player.Show(String.Format("Month: {0}", _earth.Month));
-                _player.Show(String.Format("Population: {0} people", _earth.Population));
-                _player.Show(String.Format("Political Capital: {0} points", _earth.PoliticPoints));
-                _player.Show(String.Format("Average Temperature: {0} °C", _earth.Temp));
-                _player.Show(String.Format("Sea Level: {0} m", _earth.SeaLevel));
-                _player.Show(String.Format("Global GDP: ${0}", _earth.GDP));
+                _player.Show(string.Format("Year: {0}", _earth.Year));
+                _player.Show(string.Format("Month: {0}", _earth.Month));
+                _player.Show(string.Format("Population: {0} people", _earth.Population));
+                _player.Show(string.Format("Political Capital: {0} points", _earth.PoliticPoints));
+                _player.Show(string.Format("Average Temperature: {0} °C", _earth.Temp));
+                _player.Show(string.Format("Sea Level: {0} m", _earth.SeaLevel));
+                _player.Show(string.Format("Global GDP: ${0}", _earth.GDP));
                 
                 //Generate random events sometimes
                 
