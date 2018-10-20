@@ -98,8 +98,8 @@ namespace YeetTheEarth
             }
         }
 
-        private int _population = 7466964280;
-        public int Population
+        private long _population = 7466964280;
+        public long Population
         {
             get
             {
