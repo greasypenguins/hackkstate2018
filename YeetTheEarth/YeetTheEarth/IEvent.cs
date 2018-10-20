@@ -14,7 +14,7 @@ namespace YeetTheEarth
 
         int MonthsLeft { get; } //Remaining duration of event in months
 
-        string NextMonth(); //Advance the event one month and get a message
+        string[] NextMonth(); //Advance the event one month and get options
 
         string ChooseOption(int option); //Choose one of the options and get the result
         

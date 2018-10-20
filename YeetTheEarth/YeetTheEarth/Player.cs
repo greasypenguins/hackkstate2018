@@ -27,30 +27,46 @@ namespace YeetTheEarth
             Console.Write(s);
         }
 
-        public void GetInput(string s)
-        {
-            
-            Console.Write(s);
-            var type = Console.ReadLine();
-        }
-
-        public void ShowEventInfo(string name, string description)
-        {
-
-        }
-
-        public void ShowEventUpdate(string month)
-        {
-
-        }
-
-        public void ShowEventResult(string s)
-        {
-
-        }
         public int GetChoice()
         {
-            return 1;
+            Boolean valid = false;
+            int ret = 0;
+
+            while(!valid)
+            {
+                try
+                {
+                    Console.Write("Your choice: ");
+                    ret = Convert.ToInt16(Console.ReadLine()) - 1;
+                    valid = true;
+                }
+                finally
+                {
+
+                }
+            }
+
+            return ret;
+        }
+
+        public void ShowEventInfo(string eventName, string eventDescription)
+        {
+            Console.WriteLine("Event: " + eventName);
+            Console.WriteLine("Description: " + eventDescription);
+        }
+
+        public void ShowEventOptions(string[] eventOptions)
+        {
+            Console.WriteLine("What will you do?");
+            for(int i = 0; i < eventOptions.Length; i++)
+            {
+                Console.WriteLine("[{0}] {1}", (i + 1).ToString(), eventOptions[i]);
+            }
+        }
+
+        public void ShowEventResult(string eventResult)
+        {
+            Console.WriteLine("Result: " + eventResult);
         }
     }
 }
