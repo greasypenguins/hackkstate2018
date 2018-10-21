@@ -56,7 +56,7 @@ namespace YeetTheEarth
                 case 2://impliment two child policy
                     _monthsLeft = 0;
                     _earth.GDP -= 1000000000;
-                    return "This decreased amount of population but now there isn't enough children and in turn overly decreased population. Oh no.";
+                    return "This decreased amount of p//  opulation but now there isn't enough children and in turn overly decreased population. Oh no.";
                 case 3://remove part of population
                     _monthsLeft = 0;
                     _earth.Population -= 100000000;
@@ -64,7 +64,7 @@ namespace YeetTheEarth
                     return "You have decided mass genocide. You have lost 1,000,000,000 in the process and in turn lost a lot of money doing so. Probably not the best idea to just kill people.";
                 default://nothing
                     _earth.Population -= 5000;
-                    return "In your effort to be incompitent, you have left society to fend for itself with the bugs. There were minor outbreaks of bug related accidents killing 5,000 people.";
+                    return "You did nothing this month. Population will increase.";
             }
         }
 
