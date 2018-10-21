@@ -36,6 +36,11 @@ namespace YeetTheEarth
 
         public void RunGame()
         {
+            if(_player.GetHardMode()) //If hard mode
+            {
+                _earth.PopulationMultiplier = 0.95; //5% of population dies every month
+            }
+
             _player.ShowGameIntroMessage(_earth.Year);
 
             while ((_earth.Population >= _halfPopulation)

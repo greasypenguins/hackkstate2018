@@ -11,6 +11,27 @@ namespace YeetTheEarth
     {
         private int _consoleWidth = 100;
 
+        public bool GetHardMode()
+        {
+            string response;
+            bool hardMode;
+
+            Console.WriteLine("Hard mode? [y/n]");
+            response = Console.ReadLine();
+
+            if(response.ToLower().Contains('y'))
+            {
+                hardMode = true;
+            }
+            else
+            {
+                hardMode = false;
+            }
+
+            Console.Clear();
+            return hardMode;
+        }
+
         public void ShowGameIntroMessage(int year)
         {
             WriteLineWrap("The year is " + year.ToString() + " and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference. The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. Because of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
