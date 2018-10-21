@@ -106,7 +106,7 @@ namespace YeetTheEarth
                     ret = Convert.ToInt16(Console.ReadLine()) - 1;
                     valid = true;
                 }
-                finally
+                catch(Exception e)
                 {
 
                 }
