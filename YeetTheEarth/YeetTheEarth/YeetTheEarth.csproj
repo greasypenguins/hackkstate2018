@@ -51,6 +51,7 @@
     <Compile Include="EventSolarTechImprovement.cs" />
     <Compile Include="EventPopulationExplosion.cs" />
     <Compile Include="EventThoriumPower.cs" />
+    <Compile Include="EventWildFire.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="GameController.cs" />
     <Compile Include="Player.cs" />
