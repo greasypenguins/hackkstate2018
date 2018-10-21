@@ -27,7 +27,7 @@ namespace YeetTheEarth
             _eventGenerator = new EventGenerator(_earth);
             _activeEvents = new List<IEvent>();
             _randomizer = new Random();
-            _eventGenerationChance = 50; //Each month, 2x(50% chance of generating a new event)
+            _eventGenerationChance = 40; //Each month, 2x(40% chance of generating a new event)
             _initialPopulation = _earth.Population;
             _halfPopulation = (long)((double)_initialPopulation / (double)2);
             _initialGDP = _earth.GDP;
