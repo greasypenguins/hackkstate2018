@@ -261,7 +261,7 @@ namespace YeetTheEarth
             _seaRate += 0.00001 * _temp;
             _landPercentLost += _landPercentLossRateConstant * _seaRate;
             _politicalPoints += _politicalPointsRate;
-            _tempRate += _energy.Co2Rate / (double)1000000;
+            _tempRate += _energy.Co2Rate / (double)100000;
             _gdp -= ((decimal)_temp - (decimal)14.7) * (decimal)5865081180634;
             _gdp += ((decimal)r.NextDouble() * (decimal)200000000000) - (decimal)100000000000;
             _gdp *= _gdpMultiplier;
