@@ -15,6 +15,10 @@ namespace YeetTheEarth
         private List<IEvent> _activeEvents;
         private Random _randomizer;
         private int _eventGenerationChance;
+        private long _initialPopulation;
+        private long _halfPopulation;
+        private decimal _initialGDP;
+        private decimal _halfGDP;
 
         public GameController()
         {
@@ -24,13 +28,19 @@ namespace YeetTheEarth
             _activeEvents = new List<IEvent>();
             _randomizer = new Random();
             _eventGenerationChance = 30; //Each month, 30% chance of generating a new event
+            _initialPopulation = _earth.Population;
+            _halfPopulation = (long)((double)_initialPopulation / (double)2);
+            _initialGDP = _earth.GDP;
+            _halfGDP = (_initialGDP / (decimal)2);
         }
 
         public void RunGame()
         {
             _player.ShowGameIntroMessage();
 
-            while ((_earth.Population > 0) && (_earth.MonthsElapsed < _monthsToSurvive))
+            while ((_earth.Population >= _halfPopulation)
+                && (_earth.GDP >= _halfGDP)
+                && (_earth.MonthsElapsed < _monthsToSurvive))
             {
                 //Show stuff about Earth's current state
                 _player.ShowYear(_earth.Year);
@@ -80,9 +90,20 @@ namespace YeetTheEarth
                 _earth.NextMonth();
             }
 
-            if (_earth.Population <= 0)
+            if (_earth.Population < _halfPopulation)
             {
-                _player.ShowLose();
+                _player.ShowLosePopulation(_initialPopulation, _earth.Population);
+                _player.ShowYear(_earth.Year);
+                _player.ShowMonth(_earth.CurrentMonth);
+                _player.ShowPopulation(0);
+                _player.ShowPoliticalPoints(_earth.PoliticalPoints);
+                _player.ShowTemperature(_earth.Temp);
+                _player.ShowSeaLevel(_earth.SeaLevel);
+                _player.ShowGDP(_earth.GDP);
+            }
+            else if (_earth.GDP < _halfGDP)
+            {
+                _player.ShowLoseGDP(_initialGDP, _earth.GDP);
                 _player.ShowYear(_earth.Year);
                 _player.ShowMonth(_earth.CurrentMonth);
                 _player.ShowPopulation(0);

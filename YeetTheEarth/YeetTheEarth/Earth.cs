@@ -146,6 +146,19 @@ namespace YeetTheEarth
             }
         }
 
+        private double _populationMultiplier = 1.0009; //multiplies population each month
+        public double PopulationMultiplier
+        {
+            get
+            {
+                return _populationMultiplier;
+            }
+            set
+            {
+                _populationMultiplier = value;
+            }
+        }
+
         private double _seaLevel = 0; //Meters above initial value
         public double SeaLevel
         {
@@ -226,6 +239,7 @@ namespace YeetTheEarth
                 _year++;
             }
 
+            _population = (long)((double)_population * _populationMultiplier);
             _temp += _tempRate;
             _co2Con += _energy.Co2Rate;
             _seaLevel += _seaRate;

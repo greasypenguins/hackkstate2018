@@ -46,6 +46,7 @@
     <Compile Include="Energy.cs" />
     <Compile Include="EventEconomicCrisis.cs" />
     <Compile Include="EventGenerator.cs" />
+    <Compile Include="EventGeoengAtmosphere.cs" />
     <Compile Include="EventInsectOutbreak.cs" />
     <Compile Include="EventSolarTechImprovement.cs" />
     <Compile Include="EventPopulationExplosion.cs" />
