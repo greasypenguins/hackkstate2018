@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventDeforestation.cs" />
     <Compile Include="EventPolarBears.cs" />
     <Compile Include="EventHurricanes.cs" />
     <Compile Include="Earth.cs" />

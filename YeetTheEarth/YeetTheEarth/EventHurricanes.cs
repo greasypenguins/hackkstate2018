@@ -34,7 +34,7 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "Neptune is angry and sending hurricanes from Africa. Scientists have concluded it will take 2 months before the hurricanes flood and destroy most of Japan.",
+            "Neptune is angry and sending hurricanes. Scientists have concluded it will take 2 months before the hurricanes flood and destroy most of Japan.",
             " Day one, what do you plan to do to save Japan?");
         public string Description //Description of event
         {

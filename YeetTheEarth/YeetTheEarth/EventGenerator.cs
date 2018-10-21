@@ -42,6 +42,7 @@ namespace YeetTheEarth
             _remainingEvents.Add(new EventThoriumPower(_earth));
             _remainingEvents.Add(new EventEconomicCrisis(_earth));
             _remainingEvents.Add(new EventHurricanes(_earth));
+            _remainingEvents.Add(new EventDeforestation(_earth));
             //...
 
             _randomizer = new Random();
