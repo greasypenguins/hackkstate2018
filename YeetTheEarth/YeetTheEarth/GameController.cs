@@ -25,6 +25,11 @@ namespace YeetTheEarth
         private long _halfPopulation;
         private decimal _initialGDP;
         private decimal _halfGDP;
+        private int _initialYear;
+        private string _initialMonth;
+        private double _initialTemperature;
+        private double _initialCo2Con;
+        private double _initialSeaLevel;
 
         public GameController()
         {
@@ -38,7 +43,12 @@ namespace YeetTheEarth
             _halfPopulation = (long)((double)_initialPopulation / (double)2);
             _initialGDP = _earth.GDP;
             _halfGDP = (_initialGDP / (decimal)2);
-        }
+            _initialYear = _earth.Year;
+            _initialMonth = _earth.CurrentMonth;
+            _initialTemperature = _earth.Temp;
+            _initialCo2Con = _earth.Co2Con;
+            _initialSeaLevel = _earth.SeaLevel;
+    }
 
         public void RunGame()
         {
@@ -117,34 +127,37 @@ namespace YeetTheEarth
 
             if (_earth.Population < _halfPopulation)
             {
-                _player.ShowLosePopulation(_initialPopulation, _earth.Population);
+                _player.ShowLosePopulation();
+                _player.ShowInitials(_initialYear, _initialMonth, _initialPopulation, _initialTemperature, _initialCo2Con, _initialSeaLevel, _initialGDP);
                 _player.ShowYear(_earth.Year);
                 _player.ShowMonth(_earth.CurrentMonth);
-                _player.ShowPopulation(0);
-                _player.ShowPoliticalPoints(_earth.PoliticalPoints);
+                _player.ShowPopulation(_earth.Population);
                 _player.ShowTemperature(_earth.Temp);
+                _player.ShowCo2Con(_earth.Co2Con);
                 _player.ShowSeaLevel(_earth.SeaLevel);
                 _player.ShowGDP(_earth.GDP);
             }
             else if (_earth.GDP < _halfGDP)
             {
-                _player.ShowLoseGDP(_initialGDP, _earth.GDP);
+                _player.ShowLoseGDP();
+                _player.ShowInitials(_initialYear, _initialMonth, _initialPopulation, _initialTemperature, _initialCo2Con, _initialSeaLevel, _initialGDP);
                 _player.ShowYear(_earth.Year);
                 _player.ShowMonth(_earth.CurrentMonth);
-                _player.ShowPopulation(0);
-                _player.ShowPoliticalPoints(_earth.PoliticalPoints);
+                _player.ShowPopulation(_earth.Population);
                 _player.ShowTemperature(_earth.Temp);
+                _player.ShowCo2Con(_earth.Co2Con);
                 _player.ShowSeaLevel(_earth.SeaLevel);
                 _player.ShowGDP(_earth.GDP);
             }
             else if (_earth.MonthsElapsed >= _monthsToSurvive)
             {
                 _player.ShowWin();
+                _player.ShowInitials(_initialYear, _initialMonth, _initialPopulation, _initialTemperature, _initialCo2Con, _initialSeaLevel, _initialGDP);
                 _player.ShowYear(_earth.Year);
                 _player.ShowMonth(_earth.CurrentMonth);
                 _player.ShowPopulation(_earth.Population);
-                _player.ShowPoliticalPoints(_earth.PoliticalPoints);
                 _player.ShowTemperature(_earth.Temp);
+                _player.ShowCo2Con(_earth.Co2Con);
                 _player.ShowSeaLevel(_earth.SeaLevel);
                 _player.ShowGDP(_earth.GDP);
             }
@@ -154,7 +167,6 @@ namespace YeetTheEarth
                 _player.ShowYear(_earth.Year);
                 _player.ShowMonth(_earth.CurrentMonth);
                 _player.ShowPopulation(_earth.Population);
-                _player.ShowPoliticalPoints(_earth.PoliticalPoints);
                 _player.ShowTemperature(_earth.Temp);
                 _player.ShowSeaLevel(_earth.SeaLevel);
                 _player.ShowGDP(_earth.GDP);

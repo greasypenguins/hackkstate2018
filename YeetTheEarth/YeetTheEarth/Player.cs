@@ -15,9 +15,9 @@ namespace YeetTheEarth
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("\nBy ");
-            for(int i = 0; i < authors.Length; i++)
+            for (int i = 0; i < authors.Length; i++)
             {
-                if(i > 0)
+                if (i > 0)
                 {
                     sb.Append("   ");
                 }
@@ -34,7 +34,7 @@ namespace YeetTheEarth
             Console.WriteLine("Hard mode? [y/n]");
             response = Console.ReadLine();
 
-            if(response.ToLower().Contains('y'))
+            if (response.ToLower().Contains('y'))
             {
                 hardMode = true;
             }
@@ -71,7 +71,7 @@ namespace YeetTheEarth
 
         public void ShowArt(string s)
         {
-            if(s.Length > 0)
+            if (s.Length > 0)
             {
                 Console.WriteLine();
                 Console.Write(s);
@@ -85,21 +85,29 @@ namespace YeetTheEarth
             Console.WriteLine();
         }
 
-        public void ShowLosePopulation(long initialPopulation, long finalPopulation)
+        public void ShowLosePopulation()
         {
             Console.WriteLine("\nYOU LOSE");
             WriteLineWrap("Unfortunately, after a long battle for humanity, the world's population has been decimated beyond all hope for recovery. The remaining survivors struggle as they perish one by one, watching the world they once knew crumble around them. It is now unlikely that the human species can continue in its current form. Use the principles you learned to promote smart environmental and economic policies so we can avoid this outcome in real life.\n");
-            Console.WriteLine("Initial population: " + initialPopulation.ToString() + " people");
-            Console.WriteLine("Final population: " + finalPopulation.ToString() + " people");
             Console.WriteLine();
         }
 
-        public void ShowLoseGDP(decimal initialGDP, decimal finalGDP)
+        public void ShowLoseGDP()
         {
             Console.WriteLine("\nYOU LOSE");
-            WriteLineWrap("Unfortunately, after a long battle for humanity, the world's economy has been decimated beyond all hope for recovery. As institutions collapse globally, humans revert to a primitive lifestyle, as the Earth is unable to support the life they once knew. Use the principles you learned to promote smart environmental and economic policies so we can avoid this outcome in real life.n\");
-            Console.WriteLine("Initial GDP: " + initialGDP.ToString("C", new CultureInfo("en-US")));
-            Console.WriteLine("Final GDP: " + finalGDP.ToString("C", new CultureInfo("en-US")));
+            WriteLineWrap("Unfortunately, after a long battle for humanity, the world's economy has been decimated beyond all hope for recovery. As institutions collapse globally, humans revert to a primitive lifestyle, as the Earth is unable to support the life they once knew. Use the principles you learned to promote smart environmental and economic policies so we can avoid this outcome in real life.");
+            Console.WriteLine();
+        }
+
+        public void ShowInitials(int initialYear, string initialMonth, long initialPopulation, double initialTemperature, double initialCo2Con, double initialSeaLevel, decimal initialGDP)
+        {
+            Console.WriteLine("Initial Year: " + initialYear.ToString());
+            Console.WriteLine("Initial Month: " + initialMonth);
+            Console.WriteLine("Initial Population: " + initialPopulation.ToString() + " people");
+            Console.WriteLine("Initial Global Mean Temperature: " + Math.Round(Convert.ToDecimal(initialTemperature), 3).ToString() + " °C");
+            Console.WriteLine("Initial CO2 Concentration: " + Math.Round(Convert.ToDecimal(initialCo2Con), 2).ToString() + " PPM");
+            Console.WriteLine("Initial Sea Level: " + Math.Round(Convert.ToDecimal(initialSeaLevel), 4).ToString() + " m");
+            Console.WriteLine("Initial Global GDP: " + initialGDP.ToString("C", new CultureInfo("en-US")));
             Console.WriteLine();
         }
 
