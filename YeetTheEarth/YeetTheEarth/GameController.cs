@@ -14,7 +14,7 @@ namespace YeetTheEarth
             "Weston Harder",
             "Caleb Logan",
             "Stephanie Milberger"};
-        private readonly int _monthsToSurvive = 36;
+        private readonly int _monthsToSurvive = 18;
         private Player _player = new Player();
         private Earth _earth = new Earth();
         private EventGenerator _eventGenerator;
