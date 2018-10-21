@@ -14,7 +14,7 @@ namespace YeetTheEarth
             "Invest in FireSafe, a liquid firefighting solution that is biodegradable in 4 months",
             "Do Nothing."};
 
-        private string _name = "Fire Crisis";
+        private string _name = "WildFires";
         public string Name //Name of event
         {
             get

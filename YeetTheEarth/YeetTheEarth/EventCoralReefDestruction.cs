@@ -15,7 +15,7 @@ namespace YeetTheEarth
             "Investment for protection for the reef, so it can grow and thrive once again",
             "Do Nothing."};
 
-        private string _name = "Fire Crisis";
+        private string _name = "CoralReefDestruction";
         public string Name //Name of event
         {
             get
