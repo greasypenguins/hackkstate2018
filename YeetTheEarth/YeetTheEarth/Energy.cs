@@ -9,15 +9,16 @@ namespace YeetTheEarth
     class Energy
     {
         private double _co2RateConstant; //PPM/month (parts per million per month). Ends up around 0.3
+        private double _co2RateAddition = 0;
         public double Co2Rate
         {
             get
             {
-                return _co2RateConstant * _relativeEnergyProduction;
+                return (_co2RateConstant * _relativeEnergyProduction) + _co2RateAddition;
             }
             set
             {
-                _co2RateConstant = value / _relativeEnergyProduction;
+                _co2RateAddition += value - ((_co2RateConstant * _relativeEnergyProduction) + _co2RateAddition);
             }
         }
 
