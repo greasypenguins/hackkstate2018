@@ -56,11 +56,11 @@ namespace YeetTheEarth
             {
                 case 1: //Fire stuff
                     _monthsLeft++;//change this
-                    _earth.GDP -= 1000000000000;//change this
-                    return "Small scale tests in Siberia show encouraging results.";//change this
+                    _earth.GDP -= 287000000;//change this
+                    return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
 
                 default: //Do nothing
-                    return "The scientists have been ignored. Was this a wise choice? The world may never know.";//change this
+                    return "The investment have been ignored. Was that a smart choice? Let the world burn to ashes";//change this
             }
             
         }
