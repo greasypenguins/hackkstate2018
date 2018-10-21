@@ -11,8 +11,8 @@ namespace YeetTheEarth
         private Earth _earth;
 
         private string[] _options = {
-            "There is alot trash in the ocean, so its going to take 5 months to do this",
-            "Investment for protection for the reef, so it can grow and thrive once again",
+            "",
+            "",
             "Do Nothing."};
 
         private string _name = "Hurricanes";
@@ -25,8 +25,8 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "Neptune is angry and sending hurricanes everywhere from Africa. Scientist have concluded it will take 2 months before the hurricanes flood and destroy most of Japan",
-            "Its been a month later, will you save the reef?");
+            "Neptune is angry and sending hurricanes from Africa. Scientists have concluded it will take 2 months before the hurricanes flood and destroy most of Japan",
+            "Day one, what do you plan to do to save Japan");
         public string Description //Description of event
         {
             get
@@ -35,7 +35,7 @@ namespace YeetTheEarth
             }
         }
 
-        private static int _totalMonths = 6; //Total length of event
+        private static int _totalMonths = 2; //Total length of event
         private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
@@ -65,7 +65,7 @@ namespace YeetTheEarth
                     return "Adding extra protection for the reef, what an investment. ";
 
                 default: //Do nothing
-                    return "The investment have been ignored. Was that a smart choice? Let the world burn to ashes";//change this
+                    return "";//change this
             }
 
         }

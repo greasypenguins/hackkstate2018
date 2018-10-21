@@ -60,6 +60,7 @@ namespace YeetTheEarth
                     return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
 
                 default: //Do nothing
+                    _earth.Co2Rate +=242
                     return "The investment have been ignored. Was that a smart choice? Ashes. Ashes. We all fall down.";//change this
             }
 
