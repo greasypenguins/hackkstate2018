@@ -25,7 +25,7 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "Under the sea, get it? The coral reef will be no more with the continuous increase of heat absorbed by the ocean. In a 6 months, a quater of the reef will die off.",
+            "Under the sea, get it? The Great Barrier Reef in Australia will be no more with the continuous increase of heat absorbed by the ocean. In a 6 months, a quater of the reef will die off.",
             "Its been a month later, will you save the reef?");
         public string Description //Description of event
         {
@@ -58,14 +58,14 @@ namespace YeetTheEarth
                 case 1://CoralReef
                     _monthsLeft++;//change this
                     _earth.GDP -= 33540000;//change this
-                    return "Cleaning the Ocean, this might take a bit of time";//change this
+                    return "Cleaning the Ocean, this might take a bit of time, but the marine life will thank you.";//change this
                 case 2:
                     _monthsLeft++;
                     _earth.GDP -= 3770000;
-                    return "Adding extra protection for the reef, what an investment. ";
+                    return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";
 
                 default: //Do nothing
-                    return "The investment have been ignored. Was that a smart choice? Let the world burn to ashes";//change this
+                    return "You ignored to conserve the coral reef. The population of coral reef died very rapidly causing a scarcity on seafood. Did you hate seafood?";//change this
             }
 
         }
