@@ -59,9 +59,9 @@ namespace YeetTheEarth
                     return "This decreased amount of population but now there isn't enough children and in turn overly decreased population. Oh no.";
                 case 3://remove part of population
                     _monthsLeft = 0;
-                    _earth.Population -= 50000000;
+                    _earth.Population -= 5000000000;
                     _earth.GDP -= 50000000;
-                    return "You have decided mass genocide. You have lost 50,000,000 in the process and in turn lost a lot of money doing so. Probably not the best idea to just kill people.";
+                    return "You have decided mass genocide. You have lost 5,000,000,000 in the process and in turn lost a lot of money doing so. Probably not the best idea to just kill people.";
                 default://nothing
                     _earth.Population -= 5000;
                     return "In your effort to be incompitent, you have left society to fend for itself with the bugs. There were minor outbreaks of bug related accidents killing 5,000 people.";
