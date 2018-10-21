@@ -61,13 +61,13 @@ namespace YeetTheEarth
                     ret = _options;
                     break;
                 case 2:
-                    ret = "";
+                    ret = _options;
                     break;
                 case 1:
-                    ret = "";
+                    ret = _options;
                     break;
                 default:
-                    ret = "";
+                    ret = _options;
                     break;
             }
 
