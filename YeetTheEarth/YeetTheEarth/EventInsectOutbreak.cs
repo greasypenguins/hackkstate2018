@@ -79,6 +79,7 @@ namespace YeetTheEarth
                         _earth.Population -= 50000;
                         return "You did not have enough political influence to pursue your plan. The people are in fear.";
                     }
+                    _earth.PoliticalPoints -= 2;
                     _earth.GDP -= 50000;
                     return "Distributing the bug spray may have cause a little penny but everyone was sure happy about it.";
 

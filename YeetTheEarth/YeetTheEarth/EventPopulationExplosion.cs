@@ -75,6 +75,7 @@ namespace YeetTheEarth
                         _earth.Population += 500000;
                         return "You did not have enough political influence to pursue your plan. People keep having babies.";
                     }
+                    _earth.PoliticalPoints -= 2;
                     _monthsLeft = 0;
                     return "This stopped the increase in population. However, you didn't lose any in the process. Good job.";
                 case 2://impliment two child policy
@@ -83,6 +84,7 @@ namespace YeetTheEarth
                         _earth.Population += 500000;
                         return "You did not have enough political influence to pursue your plan. People keep having babies.";
                     }
+                    _earth.PoliticalPoints -= 3;
                     _monthsLeft = 0;
                     _earth.GDP -= 1000000000;
                     return "This decreased amount of population but now there isn't enough children and in turn overly decreased population. Oh no.";
@@ -92,6 +94,7 @@ namespace YeetTheEarth
                         _earth.Population += 500000;
                         return "You did not have enough political influence to pursue your plan. People keep having babies.";
                     }
+                    _earth.PoliticalPoints -= 1;
                     _monthsLeft = 0;
                     _earth.Population -= 100000000;
                     _earth.GDP -= 500000000;

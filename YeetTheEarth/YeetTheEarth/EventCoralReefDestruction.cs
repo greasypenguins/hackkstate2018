@@ -78,14 +78,13 @@ namespace YeetTheEarth
                 case 1:
                     if (_earth.PoliticalPoints < 2)
                     {
+
                         return "You did not have enough political influence to pursue your plan and ended up up ignoring the coral reef.";
                     }
-                    else
-                    {
-                        _monthsLeft = 0;
-                        _earth.GDP -= 3770000;
-                        return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";
-                    }
+                    _earth.PoliticalPoints -= 2;
+                    _monthsLeft = 0;
+                    _earth.GDP -= 3770000;
+                    return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";
                 default: //Do nothing
                     _earth.GDP -= 3042303;
                     _earth.TempRate += 0.2;

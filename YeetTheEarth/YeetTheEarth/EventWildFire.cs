@@ -83,6 +83,7 @@ namespace YeetTheEarth
                         _earth.Population -= 432000;
                         return "You did not have enough political influence to pursue your plan. The forest is crying.";
                     }
+                    _earth.PoliticalPoints -= 1;
                     _monthsLeft = 0;
                     _earth.GDP -= 2870000;//change this
                     return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this

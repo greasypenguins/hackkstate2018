@@ -76,6 +76,7 @@ namespace YeetTheEarth
                     {
                         return "You did not have enough political influence to pursue your plan. Nothing happened.";
                     }
+                    _earth.PoliticalPoints -= 2;
                     _earth.GDP = _earth.GDP - 3000000000;
                     _earth.Energy.ModifyNuclearUse(.5);
                     _earth.Co2Rate *= -1.05;

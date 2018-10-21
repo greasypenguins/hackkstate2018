@@ -82,12 +82,11 @@ namespace YeetTheEarth
                         _earth.Co2Rate *= 1.02;
                         return "You did not have enough political influence to pursue your plan and ended up up ignoring the trees.";
                     }
-                    else
-                    {
-                        _earth.Co2Rate *= -1.05;
-                        _earth.GDP -= 33540000;//change this
-                        return "You plant a lot of trees! It doesnt stop them from cutting but you are fighting back! This decreases CO2 rate but cost quite a penny.";//change this
-                    }
+                    _earth.PoliticalPoints -= 2;
+                    _earth.Co2Rate *= -1.05;
+                    _earth.GDP -= 33540000;//change this
+                    return "You plant a lot of trees! It doesnt stop them from cutting but you are fighting back! This decreases CO2 rate but cost quite a penny.";//change this
+
                 case 1://laws
                     if (_earth.PoliticalPoints < 3)
                     {
@@ -96,10 +95,9 @@ namespace YeetTheEarth
                         _earth.Co2Rate *= 1.02;
                         return "You did not have enough political influence to pursue your plan and ended up up ignoring the trees.";
                     }
-                    else
-                    {
-                        return "You stop the cooperate idiots! You saved the trees.";
-                    }
+                    _earth.PoliticalPoints -= 3;
+                    return "You stop the cooperate idiots! You saved the trees.";
+
 
                 case 2://cut more trees
                     _earth.Co2Rate *= 1.05;

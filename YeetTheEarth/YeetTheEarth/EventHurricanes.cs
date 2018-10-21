@@ -92,6 +92,7 @@ I,   `Y,   `8,    """"""""     d'   ,P    d""    ,P
                         _earth.Population -= 1000000;
                         return "You did not have enough political influence to pursue your plan. The country is in panic.";
                     }
+                    _earth.PoliticalPoints -= 2;
                     _monthsLeft = 0;
                     _earth.GDP -= 60000000000;//change this
                     return "It cost a bit but you didn't lose lives. Japan is in debt to you.";//change this
@@ -102,6 +103,7 @@ I,   `Y,   `8,    """"""""     d'   ,P    d""    ,P
                         _earth.Population -= 1000000;
                         return "You did not have enough political influence to pursue your plan. The country is in panic.";
                     }
+                    _earth.PoliticalPoints -= 1;
                     _monthsLeft = 0;
                     _earth.SeaRate += .5;
                     _earth.GDP -= 4000000000;

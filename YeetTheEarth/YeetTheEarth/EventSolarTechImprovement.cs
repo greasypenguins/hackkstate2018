@@ -79,6 +79,7 @@ namespace YeetTheEarth
                         _earth.SeaRate += 1;
                         return "You did not have enough political influence to pursue your plan. This has increased temperature, CO2, and the sea level.";
                     }
+                    _earth.PoliticalPoints -= 2;
                     _monthsLeft = 0;
                     _earth.Co2Rate *= -1.05;
                     _earth.TempRate -= .05;
