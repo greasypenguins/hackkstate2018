@@ -8,6 +8,8 @@ namespace YeetTheEarth
 {
     class Earth
     {
+        private Random r = new Random();
+
         private int _monthsElapsed = 0;
         public int MonthsElapsed
         {
@@ -246,6 +248,8 @@ namespace YeetTheEarth
             _landPercentLost += _landPercentLossRateConstant * _seaRate;
             _politicalPoints += _politicalPointsRate;
             _tempRate += _energy.Co2Rate / (double)10000000;
+
+            _gdp += ((decimal)r.NextDouble() * (decimal)200000000000) - (decimal)100000000000;
         }
 
         public Earth()
