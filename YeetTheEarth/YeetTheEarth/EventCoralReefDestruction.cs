@@ -65,7 +65,7 @@ namespace YeetTheEarth
 
         }
 
-        public EventWildFires(Earth earth)
+        public EventCoralReefDestruction(Earth earth)
         {
             _earth = earth;
         }

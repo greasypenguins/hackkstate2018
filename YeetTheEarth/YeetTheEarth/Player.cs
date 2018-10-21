@@ -139,6 +139,7 @@ namespace YeetTheEarth
         {
             Console.WriteLine();
             WriteLineWrap("End of " + month + ". Press enter to continue.");
+            Console.ReadLine();
             Console.Clear();
         }
 

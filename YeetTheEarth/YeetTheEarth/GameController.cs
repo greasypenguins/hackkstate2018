@@ -90,8 +90,8 @@ namespace YeetTheEarth
                 //Show player normal monthly options
                 //Get decisions from player
 
-                _earth.NextMonth();
                 _player.NextMonth(_earth.CurrentMonth);
+                _earth.NextMonth();
             }
 
             if (_earth.Population < _halfPopulation)
