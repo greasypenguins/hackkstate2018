@@ -48,6 +48,7 @@ namespace YeetTheEarth
                 _player.ShowPopulation(_earth.Population);
                 _player.ShowPoliticalPoints(_earth.PoliticalPoints);
                 _player.ShowTemperature(_earth.Temp);
+                _player.ShowCo2Con(_earth.Co2Con);
                 _player.ShowSeaLevel(_earth.SeaLevel);
                 _player.ShowGDP(_earth.GDP);
 
