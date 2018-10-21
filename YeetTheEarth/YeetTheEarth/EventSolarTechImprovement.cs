@@ -55,15 +55,15 @@ namespace YeetTheEarth
 
                 case 2://solar research
                     _monthsLeft = 0;
-                    _earth.Co2Rate -= 1;
-                    _earth.TempRate -= 1;
-                    _earth.SeaRate -= 1;
-                    return "This helped decrease CO2 rate and lower sea levels.";
+                    _earth.Co2Rate -= .05;
+                    _earth.TempRate -= .05;
+
+                    return "This helped decrease CO2 and temperature rate.";
                 default://nothing
                     _earth.Co2Rate += 1;
                     _earth.TempRate += 1;
                     _earth.SeaRate += 1;
-                    return "You did nothing this month. This has increased temperature, CO2, and the Sea Level.";
+                    return "You did nothing this month. This has increased temperature, CO2, and the sea level.";
             }
         }
 
