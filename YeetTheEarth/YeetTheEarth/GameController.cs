@@ -10,7 +10,7 @@ namespace YeetTheEarth
     {
         private readonly string _title = "Yeet the Earth";
         private readonly string[] _authors = {
-            "Nayaline Delosangeles Coronilla-Guerrero",
+            "Nayeline Delosangeles Coronilla-Guerrero",
             "Weston Harder",
             "Caleb Logan",
             "Stephanie Milberger"};
