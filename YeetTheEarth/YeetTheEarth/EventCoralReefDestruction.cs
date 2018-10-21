@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace YeetTheEarth
 {
-    class EventCoralReefDestruction:IEvent
+    class EventCoralReefDestruction : IEvent
     {
         private Earth _earth;
 
         private string[] _options = {
-            "Invest in FireSafe, a liquid firefighting solution that is biodegradable in 4 months",
+            "There is alot trash in the ocean, so that's a start",
+            "Investment for protection for the reef, so it can grow and thrive once again",
             "Do Nothing."};
 
         private string _name = "Fire Crisis";
@@ -42,7 +43,7 @@ namespace YeetTheEarth
             {
                 return _monthsLeft;
             }
-        }
+        }1
         public string[] NextMonth() //Advance the event one month and get options
         {
             _monthsLeft--;
@@ -56,8 +57,12 @@ namespace YeetTheEarth
             {
                 case 1://CoralReef
                     _monthsLeft++;//change this
-                    _earth.GDP -= 287000000;//change this
-                    return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
+                    _earth.GDP -= 33540000;//change this
+                    return "Cleaning the Ocean, this might take a bit of time";//change this
+                case 2:
+                    _monthsLeft++;
+                    _earth.GDP -= 3770000;
+                    return "Adding extra protection for the reef, what an investment. ";
 
                 default: //Do nothing
                     return "The investment have been ignored. Was that a smart choice? Let the world burn to ashes";//change this
