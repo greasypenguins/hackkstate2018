@@ -14,7 +14,7 @@ namespace YeetTheEarth
         private EventGenerator _eventGenerator;
         private List<IEvent> _activeEvents;
         private Random _randomizer;
-        private int _eventGenerationChance;
+        private double _eventGenerationChance;
         private long _initialPopulation;
         private long _halfPopulation;
         private decimal _initialGDP;
@@ -27,7 +27,7 @@ namespace YeetTheEarth
             _eventGenerator = new EventGenerator(_earth);
             _activeEvents = new List<IEvent>();
             _randomizer = new Random();
-            _eventGenerationChance = 40; //Each month, 2x(40% chance of generating a new event)
+            _eventGenerationChance = 0.35; //Each month, 2x(35% chance of generating a new event)
             _initialPopulation = _earth.Population;
             _halfPopulation = (long)((double)_initialPopulation / (double)2);
             _initialGDP = _earth.GDP;
@@ -55,11 +55,11 @@ namespace YeetTheEarth
                 //Attemp to generate random events (twice)
                 if(_eventGenerator.MoreEvents)
                 {
-                    if (_randomizer.Next(100) < _eventGenerationChance)
+                    if (_randomizer.NextDouble() < _eventGenerationChance)
                     {
                         _activeEvents.Add(_eventGenerator.GetEvent());
                     }
-                    if (_randomizer.Next(100) < _eventGenerationChance)
+                    if (_randomizer.NextDouble() < _eventGenerationChance)
                     {
                         _activeEvents.Add(_eventGenerator.GetEvent());
                     }
