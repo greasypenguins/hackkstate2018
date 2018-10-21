@@ -25,8 +25,8 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "An energy crisis has struck. People have been rapidly using energy this month and you notice you wont have enough to last.",
-            "Its only half way through the month. What do you do?");
+            "A horde of beetles have infested most cities Mexico. ",
+            "It's quite disgusting and many are panicing while crops are dying. What do you do?");
         public string Description //Description of event
         {
             get
@@ -54,12 +54,12 @@ namespace YeetTheEarth
         {
             switch (option)
             {
-                case 1://pesticide
+                case 0://pesticide
                     _earth.Co2Rate += .5;
                     _earth.TempRate += .5;
                     return "The pesticide made the enviorment cry into the ocean which led to many disasters including the temperature and CO2 concentration rising. Oops.";
 
-                case 2://bug spray
+                case 1://bug spray
                     _earth.GDP -= 50000;
                     return "Distributing the bug spray may have cause a little penny but everyone was sure happy about it.";
 

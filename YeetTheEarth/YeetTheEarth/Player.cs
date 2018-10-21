@@ -83,6 +83,11 @@ namespace YeetTheEarth
             Console.WriteLine("Global Mean Temperature: " + Math.Round(Convert.ToDecimal(temperature), 3).ToString() + " °C");
         }
 
+        public void ShowCo2Con(double co2Con)
+        {
+            Console.WriteLine("CO2 Concentration: " + Math.Round(Convert.ToDecimal(co2Con), 2).ToString() + " PPM");
+        }
+
         public void ShowSeaLevel(double seaLevel)
         {
             Console.WriteLine("Sea Level: " + Math.Round(Convert.ToDecimal(seaLevel), 4).ToString() + " m");
@@ -106,7 +111,7 @@ namespace YeetTheEarth
                     ret = Convert.ToInt16(Console.ReadLine()) - 1;
                     valid = true;
                 }
-                finally
+                catch(Exception e)
                 {
 
                 }
@@ -117,6 +122,7 @@ namespace YeetTheEarth
 
         public void ShowEventInfo(string eventName, string eventDescription)
         {
+            Console.WriteLine();
             WriteLineWrap("Event: " + eventName);
             WriteLineWrap("Description: " + eventDescription);
         }

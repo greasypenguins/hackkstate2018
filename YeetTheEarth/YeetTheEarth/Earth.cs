@@ -203,8 +203,8 @@ namespace YeetTheEarth
             }
         }
 
-        private int _politicalPoints = 3;
-        private int _politicalPointsRate = 3; //Points per month
+        private int _politicalPoints = 0;
+        private int _politicalPointsRate = 1; //Points per month
         public int PoliticalPoints
         {
             get
