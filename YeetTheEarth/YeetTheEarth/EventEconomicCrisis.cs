@@ -60,37 +60,36 @@ namespace YeetTheEarth
 
         public string ChooseOption(int option) //Choose one of the options and get the result
         {
-            StringBuilder reaction = new StringBuilder();
+            
 
             switch (option)
             {
                 case 1://coal
                     _earth.Energy.ModifyCoalUse(-.5);
-                    reaction.Append("Coal Use rate decreased.");
-                    break;
+                   return "Coal Use rate decreased.";
                 case 2://solar
 
-                    break;
+                    return "";
                 case 3://wind
-                    break;
+                    return "";
                 case 4://nuclear
-                    break;
+                    return "";
                 case 5://natural gas
-                    break;
+                    return "";
                 case 6://geothermic
-                    break;
+                    return "";
                 case 7://hydro
                     _earth.Energy.ModifyHydroUse(-.5);
-                    break;
+                    return "";
                 case 8://energy program
 
-                    break;
+                    return "";
                 case 9://nothing
-                    break;
-
-
+                    return "";
+                default:
+                    return "";
             }
-            return reaction.ToString();
+            
         }
 
         public EventEconomicCrisis(Earth earth)

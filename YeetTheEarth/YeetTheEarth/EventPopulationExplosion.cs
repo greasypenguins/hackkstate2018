@@ -48,7 +48,24 @@ namespace YeetTheEarth
 
         public string ChooseOption(int option) //Choose one of the options and get the result
         {
-            throw new NotImplementedException();
+            switch (option)
+            {
+                case 1://family planning
+                    _monthsLeft = 0;
+                    return "This stopped the increase in population. However, you didn't lose any in the process. Good job.";
+                case 2://impliment two child policy
+                    _monthsLeft = 0;
+                    _earth.GDP -= 1000000000;
+                    return "This decreased amount of population but now there isn't enough children and in turn overly decreased population. Oh no.";
+                case 3://remove part of population
+                    _monthsLeft = 0;
+                    _earth.Population -= 50000000;
+                    _earth.GDP -= 50000000;
+                    return "You have decided mass genocide. You have lost 50,000,000 in the process and in turn lost a lot of money doing so. Probably not the best idea to just kill people.";
+                default://nothing
+                    _earth.Population -= 5000;
+                    return "In your effort to be incompitent, you have left society to fend for itself with the bugs. There were minor outbreaks of bug related accidents killing 5,000 people.";
+            }
         }
 
         public string[] NextMonth() //Advance the event one month and get options
@@ -58,12 +75,15 @@ namespace YeetTheEarth
             switch (_monthsLeft)
             {
                 case 3:
+                    _earth.Population += 5000000;
                     ret = _options;
                     break;
                 case 2:
+                    _earth.Population += 5000000;
                     ret = _options;
                     break;
                 case 1:
+                    _earth.Population += 5000000;
                     ret = _options;
                     break;
                 default:
@@ -71,7 +91,6 @@ namespace YeetTheEarth
                     break;
             }
 
-            throw new NotImplementedException();
             _monthsLeft--;
             return ret;
         }
