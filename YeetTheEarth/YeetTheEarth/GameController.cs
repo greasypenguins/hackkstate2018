@@ -45,6 +45,7 @@ namespace YeetTheEarth
             if(_player.GetHardMode(_title, _authors)) //If hard mode
             {
                 _earth.PopulationMultiplier = 0.95; //5% of population dies every month
+                _earth.GDPMultiplier = 0.95; //5% of GDP lost every month
             }
 
             _player.ShowGameIntroMessage(_earth.Year);

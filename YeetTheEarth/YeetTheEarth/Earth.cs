@@ -148,7 +148,7 @@ namespace YeetTheEarth
             }
         }
 
-        private double _populationMultiplier = 1.0009; //multiplies population each month
+        private double _populationMultiplier = 0.98; //Lose 2% of population each month
         public double PopulationMultiplier
         {
             get
@@ -158,6 +158,19 @@ namespace YeetTheEarth
             set
             {
                 _populationMultiplier = value;
+            }
+        }
+
+        private decimal _gdpMultiplier = (decimal)0.98; //Lose 2% of GDP each month
+        public decimal GDPMultiplier
+        {
+            get
+            {
+                return _gdpMultiplier;
+            }
+            set
+            {
+                _gdpMultiplier = value;
             }
         }
 
@@ -251,6 +264,7 @@ namespace YeetTheEarth
             _tempRate += _energy.Co2Rate / (double)1000000;
             _gdp -= ((decimal)_temp - (decimal)14.7) * (decimal)5865081180634;
             _gdp += ((decimal)r.NextDouble() * (decimal)200000000000) - (decimal)100000000000;
+            _gdp *= _gdpMultiplier;
         }
 
         public Earth()
