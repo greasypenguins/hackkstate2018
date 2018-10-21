@@ -44,7 +44,7 @@ namespace YeetTheEarth
             Console.WriteLine();
             WriteLineWrap("It’s up to you to understand and stop global warming so we can continue to inhabit Earth. Good luck.");
             Console.WriteLine();
-            Console.Write("                               _______\n                          , o88~~88888888o,\n                        , ~~? 8P  88888    8,\n                       d  d88 d88 d8_88     b\n                      d  d888888888          b\n                      8,? 88888888  d8. b o. 8\n                      8~88888888~~^ 8888| db 8\n                      ? 888888          , 888P\n                       ?  `8888b, _     d888P\n                        `   8888888b, 8888'\n                          ~-? 8888888 _.P - \n                               ~~~~~~\n");
+            Console.Write("                               _______\n                          , o88~~88888888,\n                        , ~~? 8P  88888    8,\n                       d  d88 d88 d8_88     b\n                      d  d888888888          b\n                      8,? 88888888  d8. b o. 8\n                      8~88888888~~^ 8888| db 8\n                      ? 888888          , 888P\n                       ?  `8888b, _     d888P\n                        `   8888888b, 8888'\n                          ~-? 8888888 _.P - \n                               ~~~~~~\n");
             WriteLineWrap("Press enter to continue with your new role.");
             Console.ReadLine();
             Console.Clear();
