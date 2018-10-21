@@ -14,7 +14,7 @@ namespace YeetTheEarth
             "Invest in FireSafe, a liquid firefighting solution that is biodegradable in 4 months",
             "Do Nothing."};
 
-        private string _name = "WildFires";
+        private string _name = "Wild Fires";
         public string Name //Name of event
         {
             get
@@ -34,7 +34,7 @@ namespace YeetTheEarth
             }
         }
 
-        private static int _totalMonths = 1; //Total length of event
+        private static int _totalMonths = 4; //Total length of event
         private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
@@ -55,7 +55,7 @@ namespace YeetTheEarth
             switch (option)
             {
                 case 0: //Fire stuff
-                    _monthsLeft++;//change this
+                    _monthsLeft = 0;
                     _earth.GDP -= 2870000;//change this
                     return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
 

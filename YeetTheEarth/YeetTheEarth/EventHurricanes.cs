@@ -11,8 +11,8 @@ namespace YeetTheEarth
         private Earth _earth;
 
         private string[] _options = {
-            "",
-            "",
+            "Evacuate Japan.",
+            "Send resources.",
             "Do Nothing."};
 
         private string _name = "Hurricanes";
@@ -25,8 +25,8 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "Neptune is angry and sending hurricanes from Africa. Scientists have concluded it will take 2 months before the hurricanes flood and destroy most of Japan",
-            "Day one, what do you plan to do to save Japan");
+            "Neptune is angry and sending hurricanes from Africa. Scientists have concluded it will take 2 months before the hurricanes flood and destroy most of Japan.",
+            " Day one, what do you plan to do to save Japan?");
         public string Description //Description of event
         {
             get
@@ -55,17 +55,20 @@ namespace YeetTheEarth
         {
             switch (option)
             {
-                case 1://CoralReef
-                    _monthsLeft++;//change this
-                    _earth.GDP -= 33540000;//change this
-                    return "Cleaning the Ocean, this might take a bit of time";//change this
-                case 2:
-                    _monthsLeft++;
-                    _earth.GDP -= 3770000;
-                    return "Adding extra protection for the reef, what an investment. ";
+                case 0://evacuate
+
+                    _earth.GDP -= 60000000000;//change this
+                    return "It cost a bit but you didn't lose lives. Japan is in debt to you.";//change this
+                case 1://send resources
+                    _earth.SeaRate += .5;
+                    _earth.GDP -= 4000000000;
+                    _earth.Population -= 50000;
+                    return "Japan was very thankful for the resources. It costed quite a penny but people were saved. The sea levels and were greatly affected and some people did end up dying.";
 
                 default: //Do nothing
-                    return "";//change this
+                    _earth.SeaRate += .5;
+                    _earth.Population -= 1000000;
+                    return "You have done nothing. Japan is in turmoil and the population decreased severely and the sea level raised dramatically.";//change this
             }
 
         }

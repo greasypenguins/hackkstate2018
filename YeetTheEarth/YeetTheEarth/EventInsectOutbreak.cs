@@ -64,8 +64,8 @@ namespace YeetTheEarth
                     return "Distributing the bug spray may have cause a little penny but everyone was sure happy about it.";
 
                 default://nothing
-                    _earth.Population -= 5000;
-                    return "In your effort to be incompitent, you have left society to fend for itself with the bugs. There were minor outbreaks of bug related accidents killing 5,000 people.";
+                    _earth.Population -= 50000;
+                    return "In your effort to be incompitent, you have left society to fend for itself with the bugs. There were minor outbreaks of bug related accidents killing 50,000 people.";
             }
         }
 

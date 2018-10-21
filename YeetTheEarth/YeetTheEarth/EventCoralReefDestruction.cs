@@ -11,11 +11,11 @@ namespace YeetTheEarth
         private Earth _earth;
 
         private string[] _options = {
-            "There is alot trash in the ocean, so its going to take 5 months to do this",
-            "Investment for protection for the reef, so it can grow and thrive once again",
+            "Encourage people to dirty the water.",
+            "Investment for protection for the reef, so it can grow and thrive once again.",
             "Do Nothing."};
 
-        private string _name = "CoralReefDestruction";
+        private string _name = "Coral Reef Destruction";
         public string Name //Name of event
         {
             get
@@ -25,8 +25,8 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "Under the sea, get it? The Great Barrier Reef in Australia will be no more with the continuous increase of heat absorbed by the ocean. In a 6 months, a quater of the reef will die off.",
-            "Its been a month later, will you save the reef?");
+            "Under the sea, get it? The Great Barrier Reef in Australia will be no more with the continuous increase of heat absorbed by the ocean. In 3 months, a quater of the reef will die off.",
+            " Will you save the reef?");
         public string Description //Description of event
         {
             get
@@ -35,7 +35,7 @@ namespace YeetTheEarth
             }
         }
 
-        private static int _totalMonths = 6; //Total length of event
+        private static int _totalMonths = 3; //Total length of event
         private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
@@ -55,19 +55,23 @@ namespace YeetTheEarth
         {
             switch (option)
             {
-                case 0://CoralReef
-                    _monthsLeft++;//change this
+                case 1://CoralReef
+
+                    _earth.Co2Rate += .05;
+                    _earth.SeaRate += .05;
                     _earth.GDP -= 33540000;//change this
-                    return "Cleaning the Ocean, this might take a bit of time, but the marine life will thank you.";//change this
-                case 1:
-                    _monthsLeft++;
+                    return "How horrible! The ocean is getting worse rising the sea levels and CO2 concentration.";//change this
+                case 2:
+                    _monthsLeft = 0;
                     _earth.GDP -= 3770000;
                     return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";
 
                 default: //Do nothing
                     _earth.GDP -= 3042303;
                     _earth.TempRate += 0.2;
-                    return "You ignored to conserve the coral reef. The population of coral reef died very rapidly causing a scarcity on seafood. Did you hate seafood?";//change this
+                    _earth.SeaRate += .02;
+
+                    return "You ignored to conserve the coral reef. This raised the sea level and temperature. The population of coral reef died very rapidly causing a scarcity on seafood. Did you hate seafood?";//change this
             }
 
         }
