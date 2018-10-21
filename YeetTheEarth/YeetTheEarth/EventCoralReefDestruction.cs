@@ -76,10 +76,16 @@ namespace YeetTheEarth
                     _earth.GDP -= 33540000;//change this
                     return "How horrible! The ocean is getting worse rising the sea levels and CO2 concentration.";//change this
                 case 1:
-                    _monthsLeft = 0;
-                    _earth.GDP -= 3770000;
-                    return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";
-
+                    if (_earth.PoliticalPoints < 2)
+                    {
+                        return "You did not have enough political influence to pursue your plan and ended up up ignoring the coral reef.";
+                    }
+                    else
+                    {
+                        _monthsLeft = 0;
+                        _earth.GDP -= 3770000;
+                        return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";
+                    }
                 default: //Do nothing
                     _earth.GDP -= 3042303;
                     _earth.TempRate += 0.2;

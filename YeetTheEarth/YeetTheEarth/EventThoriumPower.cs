@@ -74,6 +74,10 @@ namespace YeetTheEarth
             switch (option)
             {
                 case 0: //power plants
+                    if (_earth.PoliticalPoints < 2)
+                    {
+                        return "You did not have enough political influence to pursue your plan. Nothing happened.";
+                    }
                     _earth.GDP = _earth.GDP - 3000000000;
                     _earth.Energy.ModifyNuclearUse(.5);
                     _earth.Co2Rate *= -1.05;

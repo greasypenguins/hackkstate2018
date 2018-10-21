@@ -70,19 +70,34 @@ namespace YeetTheEarth
             switch (option)
             {
                 case 1://family planning
+                    if (_earth.PoliticalPoints < 2)
+                    {
+                        _earth.Population += 500000;
+                        return "You did not have enough political influence to pursue your plan. People keep having babies.";
+                    }
                     _monthsLeft = 0;
                     return "This stopped the increase in population. However, you didn't lose any in the process. Good job.";
                 case 2://impliment two child policy
+                    if (_earth.PoliticalPoints < 3)
+                    {
+                        _earth.Population += 500000;
+                        return "You did not have enough political influence to pursue your plan. People keep having babies.";
+                    }
                     _monthsLeft = 0;
                     _earth.GDP -= 1000000000;
                     return "This decreased amount of population but now there isn't enough children and in turn overly decreased population. Oh no.";
                 case 3://remove part of population
+                    if (_earth.PoliticalPoints < 1)
+                    {
+                        _earth.Population += 500000;
+                        return "You did not have enough political influence to pursue your plan. People keep having babies.";
+                    }
                     _monthsLeft = 0;
                     _earth.Population -= 100000000;
                     _earth.GDP -= 500000000;
                     return "You have decided mass genocide. You have lost 1,000,000,000 in the process and in turn lost a lot of money doing so. Probably not the best idea to just kill people.";
                 default://nothing
-                    _earth.Population -= 5000;
+                    _earth.Population += 500000;
                     return "You did nothing this month. Population will increase.";
             }
         }

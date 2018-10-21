@@ -74,6 +74,11 @@ namespace YeetTheEarth
                     return "The pesticide made the enviorment cry into the ocean which led to many disasters including the temperature and CO2 concentration rising. Oops.";
 
                 case 1://bug spray
+                    if (_earth.PoliticalPoints < 2)
+                    {
+                        _earth.Population -= 50000;
+                        return "You did not have enough political influence to pursue your plan. The people are in fear.";
+                    }
                     _earth.GDP -= 50000;
                     return "Distributing the bug spray may have cause a little penny but everyone was sure happy about it.";
 

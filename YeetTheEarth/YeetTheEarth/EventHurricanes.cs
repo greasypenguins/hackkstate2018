@@ -86,10 +86,22 @@ I,   `Y,   `8,    """"""""     d'   ,P    d""    ,P
             switch (option)
             {
                 case 0://evacuate
+                    if (_earth.PoliticalPoints < 2)
+                    {
+                        _earth.SeaRate += .5;
+                        _earth.Population -= 1000000;
+                        return "You did not have enough political influence to pursue your plan. The country is in panic.";
+                    }
                     _monthsLeft = 0;
                     _earth.GDP -= 60000000000;//change this
                     return "It cost a bit but you didn't lose lives. Japan is in debt to you.";//change this
                 case 1://send resources
+                    if (_earth.PoliticalPoints < 1)
+                    {
+                        _earth.SeaRate += .5;
+                        _earth.Population -= 1000000;
+                        return "You did not have enough political influence to pursue your plan. The country is in panic.";
+                    }
                     _monthsLeft = 0;
                     _earth.SeaRate += .5;
                     _earth.GDP -= 4000000000;

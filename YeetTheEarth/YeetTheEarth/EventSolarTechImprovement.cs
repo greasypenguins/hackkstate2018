@@ -72,6 +72,13 @@ namespace YeetTheEarth
                     return "Scientist have studied hard and have found nothing. Lost a little money. Oh well.";
 
                 case 2://solar research
+                    if (_earth.PoliticalPoints < 2)
+                    {
+                        _earth.Co2Rate *= 1;
+                        _earth.TempRate += 1;
+                        _earth.SeaRate += 1;
+                        return "You did not have enough political influence to pursue your plan. This has increased temperature, CO2, and the sea level.";
+                    }
                     _monthsLeft = 0;
                     _earth.Co2Rate *= -1.05;
                     _earth.TempRate -= .05;
