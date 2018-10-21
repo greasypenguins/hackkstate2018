@@ -11,9 +11,9 @@ namespace YeetTheEarth
         private Earth _earth;
 
         private string[] _options = {
-            "Make Thorium Power Plants.",
-            "Do Nothing.",
-            "whatever"};
+            "Increase pesticide.",
+            "Distribute bug spray.",
+            "Nothing."};
 
         private string _name = "Insect Outbreak";
         public string Name //Name of event
