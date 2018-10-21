@@ -56,10 +56,11 @@ namespace YeetTheEarth
             switch (option)
             {
                 case 0://evacuate
-
+                    _monthsLeft = 0;
                     _earth.GDP -= 60000000000;//change this
                     return "It cost a bit but you didn't lose lives. Japan is in debt to you.";//change this
                 case 1://send resources
+                    _monthsLeft = 0;
                     _earth.SeaRate += .5;
                     _earth.GDP -= 4000000000;
                     _earth.Population -= 50000;

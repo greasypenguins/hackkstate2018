@@ -80,6 +80,7 @@ namespace YeetTheEarth
                     _monthsLeft = 0;
                     return "Hydro energy use rate increased.";
                 case 5://oil
+                    _monthsLeft = 0;
                     return "Oil use rate increased.";
                 case 6://biodegradable
                     _monthsLeft = 0;
