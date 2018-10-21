@@ -9,20 +9,23 @@ namespace YeetTheEarth
 {
     class Player
     {
-        private int _consoleWidth = 80;
+        private int _consoleWidth = 100;
 
-        public void ShowGameIntroMessage()
+        public void ShowGameIntroMessage(int year)
         {
-            WriteLineWrap("The year is 2016 and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference.\n The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. \nBecause of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
-            WriteLineWrap(" ");
+            WriteLineWrap("The year is " + year.ToString() + " and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference.\n The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. \nBecause of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
+            Console.WriteLine();
             WriteLineWrap("This is where you come in. As a member of the IPCC, with your expertise in global warming, the UN has come to you for guidance. \nYou are now in charge of how the world reacts to random events that are making global warming worse.");
-            WriteLineWrap(" ");
-            WriteLineWrap("Your goal is to get the Earth to a “stable/no threat” condition. \nCurrently it stands at the “moderate/some threat” condition. \nIf you do not act properly, the Earth’s condition will become “severe/high threat”. If this occurs, Earth will become unable to support any life and humanity will end.");
-            WriteLineWrap(" ");
+            Console.WriteLine();
+            WriteLineWrap("Your goal is to get Earth to a “stable/no threat” condition. \nCurrently it stands at the “moderate/some threat” condition. \nIf you do not act properly, the Earth’s condition will become “severe/high threat”. If this occurs, Earth will become unable to support any life and humanity will end.");
+            Console.WriteLine();
             WriteLineWrap("Each month new problems may occur, and you will be given the reason as to why this occurs and why it’s bad for Earth. \nThen you will be given multiple options to react to the event. \nDepending on your decisions, things like the temperature and population will be affected, as well as the overall condition of Earth.");
-            WriteLineWrap(" ");
+            Console.WriteLine();
             WriteLineWrap("It’s up to you to understand and stop global warming so we can continue to inhabit Earth. Good luck.");
-            WriteLineWrap(" ");
+            Console.WriteLine();
+            WriteLineWrap("Press enter to continue with your new role.");
+            Console.ReadLine();
+            Console.Clear();
         }
 
         public void Show(string s)
@@ -130,6 +133,20 @@ namespace YeetTheEarth
         public void ShowEventResult(string eventResult)
         {
             WriteLineWrap("Result: " + eventResult);
+        }
+
+        public void NextMonth(string month)
+        {
+            Console.WriteLine();
+            WriteLineWrap("End of " + month + ". Press enter to continue.");
+            Console.Clear();
+        }
+
+        public void EndGame()
+        {
+            Console.WriteLine();
+            WriteLineWrap("Press enter to end game.");
+            Console.ReadLine();
         }
 
         private void WriteLineWrap(string output)

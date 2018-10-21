@@ -15,7 +15,7 @@ namespace YeetTheEarth
             "Conduct small area testing.",
             "Deploy worldwide."};
 
-        private string _name = "Solar Technology Improvement";
+        private string _name = "Atmospheric Geoengineering";
         public string Name //Name of event
         {
             get
@@ -24,9 +24,7 @@ namespace YeetTheEarth
             }
         }
 
-        private string _description = string.Join("",
-            "Scientists have discovered a new method of creating solar cells, potentially enabling ",
-            "rapid improvement in solar panel efficiency and cost.");
+        private string _description = "Scientists have hypothesized that injecting a new chemical into the atmosphere could reflect sunlight and reduce global warming.";
         public string Description //Description of event
         {
             get

@@ -36,7 +36,7 @@ namespace YeetTheEarth
 
         public void RunGame()
         {
-            _player.ShowGameIntroMessage();
+            _player.ShowGameIntroMessage(_earth.Year);
 
             while ((_earth.Population >= _halfPopulation)
                 && (_earth.GDP >= _halfGDP)
@@ -88,6 +88,7 @@ namespace YeetTheEarth
                 //Get decisions from player
 
                 _earth.NextMonth();
+                _player.NextMonth(_earth.CurrentMonth);
             }
 
             if (_earth.Population < _halfPopulation)
@@ -134,6 +135,8 @@ namespace YeetTheEarth
                 _player.ShowSeaLevel(_earth.SeaLevel);
                 _player.ShowGDP(_earth.GDP);
             }
+
+            _player.EndGame();
         }
     }
 }
