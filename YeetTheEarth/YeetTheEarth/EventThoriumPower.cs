@@ -43,9 +43,7 @@ namespace YeetTheEarth
             }
         }
 
-        private string _description = string.Join("",
-            "An energy crisis has struck. People have been rapidly using energy this month and you notice you wont have enough to last.",
-            "Its only half way through the month. What do you do?");
+        private string _description = "Researchers have discovered the secret to producing electricity by harvesting the power of the Thorium atom. Now, nuclear advocates suggest scaling the technology to replace conventional power sources.";
         public string Description //Description of event
         {
             get

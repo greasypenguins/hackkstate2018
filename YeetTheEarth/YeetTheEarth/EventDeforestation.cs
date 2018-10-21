@@ -44,7 +44,7 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "Breaking News! The cooperate airheadsthought it was a good idea to start cutting down rainforests in Brazil for 'paper'.",
+            "Breaking News! The cooperate airheads thought it was a good idea to start cutting down rainforests in Brazil for 'paper'.",
             " If we don't stop them all the trees will be gone!!!! What will you do to save the trees?");
         public string Description //Description of event
         {
