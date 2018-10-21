@@ -52,9 +52,7 @@ namespace YeetTheEarth
         }
         public string[] NextMonth() //Advance the event one month and get options
         {
-            string[] ret;
-            _earth.NextMonth();
-
+            _monthsLeft--;
             return _options;
 
 
@@ -71,7 +69,7 @@ namespace YeetTheEarth
                     reaction.Append("Coal Use rate decreased.");
                     break;
                 case 2://solar
-                    
+
                     break;
                 case 3://wind
                     break;
@@ -85,7 +83,7 @@ namespace YeetTheEarth
                     _earth.Energy.ModifyHydroUse(-.5);
                     break;
                 case 8://energy program
-                    
+
                     break;
                 case 9://nothing
                     break;

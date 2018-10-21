@@ -46,30 +46,27 @@ namespace YeetTheEarth
         }
         public string[] NextMonth() //Advance the event one month and get options
         {
-            _earth.NextMonth();
+            _monthsLeft--;
             return _options;
         }
 
         public string ChooseOption(int option) //Choose one of the options and get the result
         {
-            StringBuilder reaction = new StringBuilder();
             switch (option)
             {
-                case 1:
-                    _earth.GDP = _earth.GDP - 3000000000;
-                    _earth.Energy.ModifyNuclearUse(.5);
-                    _earth.Co2Rate = _earth.Co2Rate - 0.5;
-                    _earth.Population = _earth.Population - 30000000;
-                    reaction.Append("You have spent $3,000,000,000 on new nuclear plants");
-                    reaction.Append("\nThe percent of Nuclear power has increased.");
-                    reaction.Append("\nThe rate of CO2 concentrasion rise has decreased.");
-                    reaction.Append("\nA nuclear reactor eploded and killed 30,000,000 people.");
-                    break;
-                case 2:
-                    reaction.Append("\nNothing happened.");
-                    break;
+                case 1://pesticide
+                    _earth.Co2Rate += .5;
+                    _earth.TempRate += .5;
+                    return "The pesticide made the enviorment cry into the ocean which led to many disasters including the temperature and CO2 concentration rising. Oops.";
+
+                case 2://bug spray
+                    _earth.GDP -= 50000;
+                    return "Distributing the bug spray may have cause a little penny but everyone was sure happy about it.";
+
+                default://nothing
+                    _earth.Population -= 5000;
+                    return "In your effort to be incompitent, you have left society to fend for itself with the bugs. There were minor outbreaks of bug related accidents killing 5,000 people.";
             }
-            return reaction.ToString();
         }
 
         public EventInsectOutbreak(Earth earth)

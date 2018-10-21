@@ -62,7 +62,7 @@ namespace YeetTheEarth
                 default: //Do nothing
                     return "The investment have been ignored. Was that a smart choice? Let the world burn to ashes";//change this
             }
-            
+
         }
 
         public EventWildFires(Earth earth)
