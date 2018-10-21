@@ -220,6 +220,7 @@ namespace YeetTheEarth
 
         private int _politicalPoints = 0;
         private int _politicalPointsRate = 1; //Points per month
+        private int _politicalPointsCap = 10;
         public int PoliticalPoints
         {
             get
@@ -260,11 +261,15 @@ namespace YeetTheEarth
             _temp += _tempRate;
             _seaRate += 0.00001 * _temp;
             _landPercentLost += _landPercentLossRateConstant * _seaRate;
-            _politicalPoints += _politicalPointsRate;
             _tempRate += _energy.Co2Rate / (double)100000;
             _gdp -= ((decimal)_temp - (decimal)14.7) * (decimal)5865081180634;
             _gdp += ((decimal)r.NextDouble() * (decimal)200000000000) - (decimal)100000000000;
             _gdp *= _gdpMultiplier;
+            _politicalPoints += _politicalPointsRate;
+            if(_politicalPoints > _politicalPointsCap)
+            {
+                _politicalPoints = _politicalPointsCap;
+            }
         }
 
         public Earth()
