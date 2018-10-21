@@ -8,16 +8,17 @@ namespace YeetTheEarth
 {
     class Energy
     {
-        private double _co2RateConstant = 0.26; //PPM/month (parts per million per month)
+        private double _co2RateConstant; //PPM/month (parts per million per month). Ends up around 0.3
+        private double _co2RateAddition = 0;
         public double Co2Rate
         {
             get
             {
-                return _co2RateConstant * _relativeEnergyProduction;
+                return (_co2RateConstant * _relativeEnergyProduction) + _co2RateAddition;
             }
             set
             {
-                _co2RateConstant = value / _relativeEnergyProduction;
+                _co2RateAddition += value - ((_co2RateConstant * _relativeEnergyProduction) + _co2RateAddition);
             }
         }
 
@@ -127,7 +128,7 @@ namespace YeetTheEarth
 
         public Energy()
         {
-            
+            RecalculateCo2RateConstant();
         }
 
         //Private because it's used when percents don't add up to 100%
@@ -159,6 +160,7 @@ namespace YeetTheEarth
 
             ModifyPercents(otherModifier);
             _percentOil /= otherModifier; //Correction
+            RecalculateCo2RateConstant();
         }
 
         public void ModifyCoalUse(double modifier)
@@ -172,6 +174,7 @@ namespace YeetTheEarth
 
             ModifyPercents(otherModifier);
             _percentOil /= otherModifier; //Correction
+            RecalculateCo2RateConstant();
         }
         public void ModifyNaturalGasUse(double modifier)
         {
@@ -184,6 +187,7 @@ namespace YeetTheEarth
 
             ModifyPercents(otherModifier);
             _percentNaturalGas /= otherModifier; //Correction
+            RecalculateCo2RateConstant();
         }
         public void ModifyWasteUse(double modifier)
         {
@@ -196,6 +200,7 @@ namespace YeetTheEarth
 
             ModifyPercents(otherModifier);
             _percentWaste /= otherModifier; //Correction
+            RecalculateCo2RateConstant();
         }
         public void ModifyNuclearUse(double modifier)
         {
@@ -208,6 +213,7 @@ namespace YeetTheEarth
 
             ModifyPercents(otherModifier);
             _percentNuclear /= otherModifier; //Correction
+            RecalculateCo2RateConstant();
         }
         public void ModifyHydroUse(double modifier)
         {
@@ -220,6 +226,7 @@ namespace YeetTheEarth
 
             ModifyPercents(otherModifier);
             _percentHydro /= otherModifier; //Correction
+            RecalculateCo2RateConstant();
         }
         public void ModifyRenewableUse(double modifier)
         {
@@ -232,6 +239,12 @@ namespace YeetTheEarth
 
             ModifyPercents(otherModifier);
             _percentRenewable /= otherModifier; //Correction
+            RecalculateCo2RateConstant();
+        }
+
+        private void RecalculateCo2RateConstant()
+        {
+            _co2RateConstant = .3 * (_percentOil + _percentCoal + _percentNaturalGas + _percentWaste);
         }
     }
 }

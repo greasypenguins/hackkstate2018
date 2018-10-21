@@ -45,7 +45,7 @@ namespace YeetTheEarth
         }
         public string[] NextMonth() //Advance the event one month and get options
         {
-            _earth.NextMonth();
+            _monthsLeft--;
             return _options;
         }
 

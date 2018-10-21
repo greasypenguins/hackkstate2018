@@ -27,7 +27,7 @@ namespace YeetTheEarth
             _eventGenerator = new EventGenerator(_earth);
             _activeEvents = new List<IEvent>();
             _randomizer = new Random();
-            _eventGenerationChance = 30; //Each month, 30% chance of generating a new event
+            _eventGenerationChance = 50; //Each month, 2x(50% chance of generating a new event)
             _initialPopulation = _earth.Population;
             _halfPopulation = (long)((double)_initialPopulation / (double)2);
             _initialGDP = _earth.GDP;
@@ -52,9 +52,13 @@ namespace YeetTheEarth
                 _player.ShowSeaLevel(_earth.SeaLevel);
                 _player.ShowGDP(_earth.GDP);
 
-                //Generate random events sometimes
+                //Attemp to generate random events (twice)
                 if(_eventGenerator.MoreEvents)
                 {
+                    if (_randomizer.Next(100) < _eventGenerationChance)
+                    {
+                        _activeEvents.Add(_eventGenerator.GetEvent());
+                    }
                     if (_randomizer.Next(100) < _eventGenerationChance)
                     {
                         _activeEvents.Add(_eventGenerator.GetEvent());
