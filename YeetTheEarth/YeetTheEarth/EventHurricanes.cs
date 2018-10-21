@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace YeetTheEarth
 {
-    class EventWildFires : IEvent
+    class EventHurricanes : IEvent
     {
         private Earth _earth;
 
         private string[] _options = {
-            "Invest in FireSafe, a liquid firefighting solution that is biodegradable in 4 months",
+            "There is alot trash in the ocean, so its going to take 5 months to do this",
+            "Investment for protection for the reef, so it can grow and thrive once again",
             "Do Nothing."};
 
         private string _name = "Fire Crisis";
@@ -24,8 +25,8 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "A Fire crisis has struck the United States. Only you can stop wildfires. People are fleeing from their homes as the fires are destroying everything in its path. In a month, more than half of the country will burn into ashes.",
-            "Its only half way through the month. What do you do?");
+            "Neptune is angry and sending hurricanes everywhere from Africa. Scientist have concluded it will take 2 months before the hurricanes flood and destroy most of Japan",
+            "Its been a month later, will you save the reef?");
         public string Description //Description of event
         {
             get
@@ -34,7 +35,7 @@ namespace YeetTheEarth
             }
         }
 
-        private static int _totalMonths = 1; //Total length of event
+        private static int _totalMonths = 6; //Total length of event
         private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
@@ -42,7 +43,7 @@ namespace YeetTheEarth
             {
                 return _monthsLeft;
             }
-        }
+        }1
         public string[] NextMonth() //Advance the event one month and get options
         {
             _monthsLeft--;
@@ -54,18 +55,22 @@ namespace YeetTheEarth
         {
             switch (option)
             {
-                case 1: //Fire stuff
+                case 1://CoralReef
                     _monthsLeft++;//change this
-                    _earth.GDP -= 287000000;//change this
-                    return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
+                    _earth.GDP -= 33540000;//change this
+                    return "Cleaning the Ocean, this might take a bit of time";//change this
+                case 2:
+                    _monthsLeft++;
+                    _earth.GDP -= 3770000;
+                    return "Adding extra protection for the reef, what an investment. ";
 
                 default: //Do nothing
-                    return "The investment have been ignored. Was that a smart choice? Ashes. Ashes. We all fall down.";//change this
+                    return "The investment have been ignored. Was that a smart choice? Let the world burn to ashes";//change this
             }
 
         }
 
-        public EventWildFires(Earth earth)
+        public EventHurricanes(Earth earth)
         {
             _earth = earth;
         }
