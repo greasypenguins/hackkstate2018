@@ -11,7 +11,7 @@ namespace YeetTheEarth
         private Earth _earth;
 
         private string[] _options = {
-            "There is alot trash in the ocean, so that's a start",
+            "There is alot trash in the ocean, so its going to take 5 months to do this",
             "Investment for protection for the reef, so it can grow and thrive once again",
             "Do Nothing."};
 
