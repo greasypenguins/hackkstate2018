@@ -42,7 +42,7 @@ namespace YeetTheEarth
             _initialPopulation = _earth.Population;
             _halfPopulation = (long)((double)_initialPopulation / (double)2);
             _initialGDP = _earth.GDP;
-            _halfGDP = (_initialGDP / (decimal)2);
+            _halfGDP = (_initialGDP / (decimal)3);
             _initialYear = _earth.Year;
             _initialMonth = _earth.CurrentMonth;
             _initialTemperature = _earth.Temp;
