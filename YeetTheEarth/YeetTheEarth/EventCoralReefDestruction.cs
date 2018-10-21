@@ -8,15 +8,6 @@ namespace YeetTheEarth
 {
     class EventCoralReefDestruction : IEvent
     {
-        private readonly string _art = ""; //ASCII art for this event
-        public string Art
-        {
-            get
-            {
-                return _art;
-            }
-        }
-
         private Earth _earth;
 
         private string[] _options = {
@@ -69,7 +60,7 @@ namespace YeetTheEarth
                     _earth.Co2Rate += .05;
                     _earth.SeaRate += .05;
                     _earth.GDP -= 33540000;//change this
-                    return "How horrible! The ocean is getting worse rising the sea levels and CO2 concentration. The issue is still happening.";//change this
+                    return "How horrible! The ocean is getting worse rising the sea levels and CO2 concentration.";//change this
                 case 2:
                     _monthsLeft = 0;
                     _earth.GDP -= 3770000;
