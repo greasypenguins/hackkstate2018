@@ -11,11 +11,26 @@ namespace YeetTheEarth
     {
         private int _consoleWidth = 100;
 
-        public bool GetHardMode()
+        public bool GetHardMode(string title, string[] authors)
         {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\nBy ");
+            for(int i = 0; i < authors.Length; i++)
+            {
+                if(i > 0)
+                {
+                    sb.Append("   ");
+                }
+                sb.Append(authors[i]);
+                sb.Append("\n");
+            }
+
             string response;
             bool hardMode;
 
+            Console.WriteLine(title);
+            Console.Write(sb.ToString());
+            Console.WriteLine("\n\n                               _______\n                          , o88~~88888888o,\n                        , ~~? 8P  88888    8,\n                       d  d88 d88 d8_88     b\n                      d  d888888888          b\n                      8,? 88888888  d8. b o. 8\n                      8~88888888~~^ 8888| db 8\n                      ? 888888          , 888P\n                       ?  `8888b, _     d888P\n                        `   8888888b, 8888'\n                          ~-? 8888888 _.P - \n                               ~~~~~~\n\n");
             Console.WriteLine("Hard mode? [y/n]");
             response = Console.ReadLine();
 
@@ -44,7 +59,6 @@ namespace YeetTheEarth
             Console.WriteLine();
             WriteLineWrap("It’s up to you to understand and stop global warming so we can continue to inhabit Earth. Good luck.");
             Console.WriteLine();
-            Console.Write("                               _______\n                          , o88~~88888888,\n                        , ~~? 8P  88888    8,\n                       d  d88 d88 d8_88     b\n                      d  d888888888          b\n                      8,? 88888888  d8. b o. 8\n                      8~88888888~~^ 8888| db 8\n                      ? 888888          , 888P\n                       ?  `8888b, _     d888P\n                        `   8888888b, 8888'\n                          ~-? 8888888 _.P - \n                               ~~~~~~\n");
             WriteLineWrap("Press enter to continue with your new role.");
             Console.ReadLine();
             Console.Clear();
@@ -53,6 +67,12 @@ namespace YeetTheEarth
         public void Show(string s)
         {
             WriteLineWrap(s);
+        }
+
+        public void ShowAsciiArt(string s)
+        {
+            Console.WriteLine();
+            Console.Write(s);
         }
 
         public void ShowWin()
@@ -133,7 +153,7 @@ namespace YeetTheEarth
                     ret = Convert.ToInt16(Console.ReadLine()) - 1;
                     valid = true;
                 }
-                catch(Exception e)
+                catch(Exception)
                 {
 
                 }

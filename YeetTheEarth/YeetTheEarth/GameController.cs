@@ -8,6 +8,12 @@ namespace YeetTheEarth
 {
     public class GameController
     {
+        private readonly string _title = "Yeet the Earth";
+        private readonly string[] _authors = {
+            "Nayaline Delosangeles Coronilla-Guerrero",
+            "Weston Harder",
+            "Caleb Logan",
+            "Stephanie Milberger"};
         private readonly int _monthsToSurvive = 36;
         private Player _player = new Player();
         private Earth _earth = new Earth();
@@ -36,7 +42,7 @@ namespace YeetTheEarth
 
         public void RunGame()
         {
-            if(_player.GetHardMode()) //If hard mode
+            if(_player.GetHardMode(_title, _authors)) //If hard mode
             {
                 _earth.PopulationMultiplier = 0.95; //5% of population dies every month
             }
