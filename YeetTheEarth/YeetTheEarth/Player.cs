@@ -13,13 +13,13 @@ namespace YeetTheEarth
 
         public void ShowGameIntroMessage(int year)
         {
-            WriteLineWrap("The year is " + year.ToString() + " and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference.\n The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. \nBecause of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
+            WriteLineWrap("The year is " + year.ToString() + " and the IPCC (Intergovernmental Panel on Climate Change) has just finished their 44th conference. The proof and science that the members and guest speakers have gathered is irrefutable, and action must be taken to avoid any further devastation due to global warming. Because of this, nations have ceded power to the UN in regards to global warming to allow for teamwork and guidance with the fight against global warming.");
             Console.WriteLine();
-            WriteLineWrap("This is where you come in. As a member of the IPCC, with your expertise in global warming, the UN has come to you for guidance. \nYou are now in charge of how the world reacts to random events that are making global warming worse.");
+            WriteLineWrap("This is where you come in. As a member of the IPCC, with your expertise in global warming, the UN has come to you for guidance. You are now in charge of how the world reacts to random events that are making global warming worse.");
             Console.WriteLine();
-            WriteLineWrap("Your goal is to get Earth to a “stable/no threat” condition. \nCurrently it stands at the “moderate/some threat” condition. \nIf you do not act properly, the Earth’s condition will become “severe/high threat”. If this occurs, Earth will become unable to support any life and humanity will end.");
+            WriteLineWrap("Your goal is to get Earth to a “stable/no threat” condition. Currently it stands at the “moderate/some threat” condition. If you do not act properly, the Earth’s condition will become “severe/high threat”. If this occurs, Earth will become unable to support any life and humanity will end.");
             Console.WriteLine();
-            WriteLineWrap("Each month new problems may occur, and you will be given the reason as to why this occurs and why it’s bad for Earth. \nThen you will be given multiple options to react to the event. \nDepending on your decisions, things like the temperature and population will be affected, as well as the overall condition of Earth.");
+            WriteLineWrap("Each month new problems may occur, and you will be given the reason as to why this occurs and why it’s bad for Earth. Then you will be given multiple options to react to the event. Depending on your decisions, things like the temperature and population will be affected, as well as the overall condition of Earth.");
             Console.WriteLine();
             WriteLineWrap("It’s up to you to understand and stop global warming so we can continue to inhabit Earth. Good luck.");
             Console.WriteLine();
@@ -149,78 +149,57 @@ namespace YeetTheEarth
             Console.ReadLine();
         }
 
-        private void WriteLineWrap(string output)
+        private void WriteLineWrap(string input)
         {
-            string[] words;
-            string word;
-            int currentWordsLength;
-            int remainingWordsLength;
-            Stack<string> currentWords; //Top of stack is last word to print
-            Stack<string> remainingWords; //Top of stack is first word to print
-            Stack<string> outputWords;
-
-            if (output.Length <= _consoleWidth)
+            StringBuilder sb;
+            int index;
+            string[] words = input.Split(' ');
+            for(int i = 0; i < words.Length; i++)
             {
-                Console.WriteLine(output);
+                words[i] = words[i] + " ";
+            }
+
+            if(words.Length == 0)
+            {
+                return;
+            }
+            else if(words.Length == 1)
+            {
+                Console.WriteLine(input);
+            }
+            else if(words[0].Length >= _consoleWidth)
+            {
+                Console.WriteLine(words[0]);
+                WriteLineWrapFromArray(words, 1);
             }
             else
             {
-                words = output.Split(' ');
-
-                remainingWords = new Stack<string>();
-                remainingWordsLength = 0;
-
-                for(int i = words.Length - 1; i >= 0; i--)
+                sb = new StringBuilder();
+                sb.Append(words[0]);
+                //Keep adding on if there is another word to add and it wouldn't be too long to add
+                index = 1;
+                while((index < words.Length) && ((sb.Length + words[index].Length) < _consoleWidth))
                 {
-                    words[i] = words[i] + " "; //All words have a space at the end but oh well it saves math
-                    remainingWords.Push(words[i]);
-                    remainingWordsLength += words[i].Length;
+                    sb.Append(words[index]);
+                    index++;
                 }
-
-                do
+                Console.WriteLine(sb.ToString());
+                //If there are more words, but the next word would make sb too long
+                if(index < words.Length)
                 {
-                    currentWords = new Stack<string>();
-                    currentWordsLength = 0;
-
-                    while ((currentWordsLength < _consoleWidth) && (remainingWords.Count > 0))
-                    {
-                        word = remainingWords.Pop();
-                        remainingWordsLength -= word.Length;
-
-                        currentWords.Push(word);
-                        currentWordsLength += word.Length;
-                    }
-
-                    if ((currentWordsLength > _consoleWidth) && (currentWords.Count > 1))
-                    {
-                        word = currentWords.Pop();
-                        currentWordsLength -= word.Length;
-
-                        remainingWords.Push(word);
-                        remainingWordsLength += word.Length;
-                    }
-
-                    outputWords = ReverseStack(currentWords);
-                    while(outputWords.Count > 0)
-                    {
-                        Console.Write(outputWords.Pop());
-                    }
-                    Console.WriteLine();
-                } while (remainingWords.Count > 0);
+                    WriteLineWrapFromArray(words, index);
+                }
             }
         }
 
-
-        private Stack<T> ReverseStack<T>(Stack<T> inputStack)
+        private void WriteLineWrapFromArray(string[] input, int startIndex)
         {
-            Stack<T> outputStack = new Stack<T>();
-
-            while(inputStack.Count > 0)
+            StringBuilder sb = new StringBuilder();
+            for (int i = startIndex; i < input.Length; i++)
             {
-                outputStack.Push(inputStack.Pop());
+                sb.Append(input[i]);
             }
-
-            return outputStack;
+            WriteLineWrap(sb.ToString());
         }
     }
 }
