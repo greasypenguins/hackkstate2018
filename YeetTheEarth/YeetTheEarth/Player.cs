@@ -88,7 +88,7 @@ namespace YeetTheEarth
         public void ShowLosePopulation(long initialPopulation, long finalPopulation)
         {
             Console.WriteLine("\nYOU LOSE");
-            WriteLineWrap("Unfortunately, after a long battle for humanity, the world's population has been decimated beyond all hope for recovery. The remaining survivors struggle as they perish one by one, watching the world they once knew crumble around them. It is now unlikely that the human species can continue in its current form. Use the principles you learned to promote smart environmental and economic policies so we can avoid this outcome in real life.");
+            WriteLineWrap("Unfortunately, after a long battle for humanity, the world's population has been decimated beyond all hope for recovery. The remaining survivors struggle as they perish one by one, watching the world they once knew crumble around them. It is now unlikely that the human species can continue in its current form. Use the principles you learned to promote smart environmental and economic policies so we can avoid this outcome in real life.\n");
             Console.WriteLine("Initial population: " + initialPopulation.ToString() + " people");
             Console.WriteLine("Final population: " + finalPopulation.ToString() + " people");
             Console.WriteLine();
@@ -97,7 +97,7 @@ namespace YeetTheEarth
         public void ShowLoseGDP(decimal initialGDP, decimal finalGDP)
         {
             Console.WriteLine("\nYOU LOSE");
-            WriteLineWrap("Unfortunately, after a long battle for humanity, the world's economy has been decimated beyond all hope for recovery. As institutions collapse globally, humans revert to a primitive lifestyle, as the Earth is unable to support the life they once knew. Use the principles you learned to promote smart environmental and economic policies so we can avoid this outcome in real life.");
+            WriteLineWrap("Unfortunately, after a long battle for humanity, the world's economy has been decimated beyond all hope for recovery. As institutions collapse globally, humans revert to a primitive lifestyle, as the Earth is unable to support the life they once knew. Use the principles you learned to promote smart environmental and economic policies so we can avoid this outcome in real life.n\");
             Console.WriteLine("Initial GDP: " + initialGDP.ToString("C", new CultureInfo("en-US")));
             Console.WriteLine("Final GDP: " + finalGDP.ToString("C", new CultureInfo("en-US")));
             Console.WriteLine();
