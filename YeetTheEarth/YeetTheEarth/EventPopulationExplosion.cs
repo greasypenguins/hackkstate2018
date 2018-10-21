@@ -8,7 +8,17 @@ namespace YeetTheEarth
 {
     class EventPopulationExplosion : IEvent
     {
-        private readonly string _art = ""; //ASCII art for this event
+        private readonly string _art = @"     _.-^^---....,,--
+ _--                  --_
+<                        >)
+|                         |
+ \._                   _./
+    ```--. . , ; .--'''
+          | |   |
+       .-=||  | |=-.
+       `-=#$%&%$#=-'
+          | ;  :|
+ _____.,-#%&$@%#&#~,._____"; //ASCII art for this event
         public string Art
         {
             get

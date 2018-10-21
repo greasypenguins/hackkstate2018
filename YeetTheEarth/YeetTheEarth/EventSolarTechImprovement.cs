@@ -8,7 +8,16 @@ namespace YeetTheEarth
 {
     class EventSolarTechImprovement : IEvent
     {
-        private readonly string _art = ""; //ASCII art for this event
+        private readonly string _art = @"  ..---..
+ /       \
+|         |
+:         ;
+ \  \~/  /
+  `, Y ,'
+   |_|_|
+   |===|
+   |===|
+    \_/"; //ASCII art for this event
         public string Art
         {
             get

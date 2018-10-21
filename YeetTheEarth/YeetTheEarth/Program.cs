@@ -27,6 +27,8 @@ namespace YeetTheEarth
             //Print the condition and variables as well as facts and tips/warnings
 
             //Print next month
+
+            //Most ASCII art from https://asciiart.website/index.php
         }
     }
 }

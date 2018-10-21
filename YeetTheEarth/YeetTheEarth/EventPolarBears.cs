@@ -8,7 +8,25 @@ namespace YeetTheEarth
 {
     class EventPolarBears : IEvent
     {
-        private readonly string _art = ""; //ASCII art for this event
+        private readonly string _art = @"        _
+       (\\  _                      ___
+      .-""`""(\\                _.""""`   `""-.
+     /      ` `-._ _.-""            `\__
+    6   6)        `-.__.-'                    `"",
+   /                                         `;-`
+  /     ,                                     |
+ ()    /  /`                                  |
+  `---`""~``\                                  |
+            \                                 |
+             \            \      /           /
+             /`,   ,      |     |           /
+            /   ""-.|      |     |         /'
+           /     / |     /,__   |       /`\
+          /    /'  |    /    `""'\      (   \
+       __/   /'    |   |         `\     \   \
+       \    /      |   |           `\    \   \
+        `-,/      /    |            /     |-""`
+                 `""""""^^^           `^^""""""""`"; //ASCII art for this event
         public string Art
         {
             get

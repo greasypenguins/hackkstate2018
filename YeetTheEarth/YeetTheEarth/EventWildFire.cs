@@ -8,7 +8,19 @@ namespace YeetTheEarth
 {
     class EventWildFires : IEvent
     {
-        private readonly string _art = ""; //ASCII art for this event
+        private readonly string _art = @"           \/ |    |/
+        \/ / \||/  /_/___/_
+         \/   |/ \/
+    _\__\_\   |  /_____/_
+           \  | /          /
+  __ _-----`  |{,-----------~
+            \ }{
+             }{{
+             }}{
+             {{}
+       , -=-~{ .-^- _
+             `}
+              {"; //ASCII art for this event
         public string Art
         {
             get

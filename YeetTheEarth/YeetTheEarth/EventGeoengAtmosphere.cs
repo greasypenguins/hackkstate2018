@@ -8,7 +8,11 @@ namespace YeetTheEarth
 {
     class EventGeoengAtmosphere : IEvent
     {
-        private readonly string _art = ""; //ASCII art for this event
+        private readonly string _art = @"      _,                _.
+     (  `)            (`  ).
+  .=( ` ,_ `)    .-``(      ).
+ (.__.:-`-_.'   (.,,(.       '`.
+                      `--`--`'`"; //ASCII art for this event
         public string Art
         {
             get

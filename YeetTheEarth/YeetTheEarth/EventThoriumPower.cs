@@ -8,7 +8,18 @@ namespace YeetTheEarth
 {
     class EventThoriumPower : IEvent
     {
-        private readonly string _art = ""; //ASCII art for this event
+        private readonly string _art = @"                ,     :     ,
+          '.    ;    :    ;    ,`
+      '-.   '.   ;   :   ;   ,`   ,-`
+   "" -.   '-.  '.  ;  :  ;  ,`  ,-`   ,-""
+      ""-.   '-. '. ; : ; ,` ,-`   ,-""
+ '""--.   '""-.  '-.'  '  `.-`  ,-""`   ,--""`
+      '""--.  '""-.   ...   ,-""`  ,--""`
+           '""--.  .:::::.  ,--""`
+------------------:::::::------------------
+                   ~~~~~
+                    ~~~
+                     ~"; //ASCII art for this event
         public string Art
         {
             get
