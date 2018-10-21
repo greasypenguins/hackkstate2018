@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace YeetTheEarth
 {
-    class EventPopulationExplosion : IEvent
+    class EventWildFires : IEvent
     {
         private Earth _earth;
 
         private string[] _options = {
-            "Do nothing.",
-            "Invest in family planning.",
-            "Implement two child policy.",
-            "Remove part of the population."};
+            "Invest in FireSafe, a liquid firefighting solution that is biodegradable in 4 months",
+            "Do Nothing."};
 
-        private string _name = "Population Explosion";
+        private string _name = "Fire Crisis";
         public string Name //Name of event
         {
             get
@@ -26,8 +24,8 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "There has been a sudden population explosion in Venezuela! Many experts warn that unchecked ",
-            "population growth could lead to famine or an energy crisis.");
+            "A Fire crisis has struck. Only you can stop wildfires. People are fleeing from their homes as the fires are destroying everything in its path. In a month, more than half of the cities will burn into ashes.",
+            "Its only half way through the month. What do you do?");
         public string Description //Description of event
         {
             get
@@ -36,7 +34,7 @@ namespace YeetTheEarth
             }
         }
 
-        private static int _totalMonths = 3; //Total length of event
+        private static int _totalMonths = 1; //Total length of event
         private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
@@ -45,38 +43,29 @@ namespace YeetTheEarth
                 return _monthsLeft;
             }
         }
+        public string[] NextMonth() //Advance the event one month and get options
+        {
+            _monthsLeft--;
+            return _options;
+
+        }
 
         public string ChooseOption(int option) //Choose one of the options and get the result
         {
-            throw new NotImplementedException();
-        }
-
-        public string[] NextMonth() //Advance the event one month and get options
-        {
-            string[] ret;
-
-            switch (_monthsLeft)
+            switch (option)
             {
-                case 3:
-                    ret = _options;
-                    break;
-                case 2:
-                    ret = "";
-                    break;
-                case 1:
-                    ret = "";
-                    break;
-                default:
-                    ret = "";
-                    break;
-            }
+                case 1: //Fire stuff
+                    _monthsLeft++;//change this
+                    _earth.GDP -= 1000000000000;//change this
+                    return "Small scale tests in Siberia show encouraging results.";//change this
 
-            throw new NotImplementedException();
-            _monthsLeft--;
-            return ret;
+                default: //Do nothing
+                    return "The scientists have been ignored. Was this a wise choice? The world may never know.";//change this
+            }
+            
         }
 
-        public EventPopulationExplosion(Earth earth)
+        public EventWildFires(Earth earth)
         {
             _earth = earth;
         }
