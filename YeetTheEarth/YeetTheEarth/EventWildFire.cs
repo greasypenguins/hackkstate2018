@@ -61,6 +61,7 @@ namespace YeetTheEarth
 
                 default: //Do nothing
                     _earth.Co2Rate += 242;
+                    _earth.Co2Rate += 242;
                     _earth.GDP -= 34643000;
                     _earth.Population -= 432000;
                     return "The investment have been ignored. Was that a smart choice? Ashes. Ashes. We all fall down.";//change this

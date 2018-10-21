@@ -31,8 +31,8 @@ namespace YeetTheEarth
         }
 
         private string _description = string.Join("",
-            "An energy crisis has struck. People have been rapidly using energy this month and you notice you wont have enough to last.",
-            "Its only half way through the month. What do you do?");
+            "An energy crisis has struck. People have been rapidly using energy this month and you notice you wont have enough to last for the next four months.",
+            "What do you do?");
         public string Description //Description of event
         {
             get
@@ -41,7 +41,7 @@ namespace YeetTheEarth
             }
         }
 
-        private static int _totalMonths = 1; //Total length of event
+        private static int _totalMonths = 4; //Total length of event
         private int _monthsLeft = _totalMonths;
         public int MonthsLeft //Remaining duration of event in months
         {
@@ -54,8 +54,6 @@ namespace YeetTheEarth
         {
             _monthsLeft--;
             return _options;
-
-
         }
 
         public string ChooseOption(int option) //Choose one of the options and get the result
@@ -70,7 +68,6 @@ namespace YeetTheEarth
                 case 1://renewable
                     _earth.Energy.ModifyRenewableUse(.5);
                     return "Renewable energy use rate increased.";
-                    return "";
                 case 2://nuclear
                     return "Nuclear energy use rate increased.";
                 case 3://natural
@@ -81,11 +78,12 @@ namespace YeetTheEarth
                     return "Oil use rate increased.";
                 case 6://biodegradable
                     _earth.Energy.ModifyHydroUse(-.5);
-                    return "Biodegradable ";
+                    return "Biodegradable energy has increased.";
                 case 7://teach
-                    return "";
+                    _monthsLeft = 0;
+                    return "You taught students to conserve energy. Ending the energy crisis. You didnt increase anything though.";
                 default:
-                    return "";
+                    return "You have done nothing this month. The energy crisis is still there.";
             }
             
         }
