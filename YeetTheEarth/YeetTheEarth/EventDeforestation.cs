@@ -76,13 +76,13 @@ namespace YeetTheEarth
             {
                 case 0://plant trees
 
-                    _earth.Co2Rate -= .05;
+                    _earth.Co2Rate *= -1.05;
                     _earth.GDP -= 33540000;//change this
                     return "You plant a lot of trees! It doesnt stop them from cutting but you are fighting back! This decreases CO2 rate but cost quite a penny.";//change this
                 case 1://laws
                     return "You stop the cooperate idiots! You saved the trees.";
                 case 2://cut more trees
-                    _earth.Co2Rate += .05;
+                    _earth.Co2Rate *= 1.05;
                     _earth.TempRate += .05;
                     _earth.Population -= 1000000000;
                     return "You monster! You made the situation worse... Now all the trees are gone, the animals are attacking humans and the CO2 and temperature levels are going up!";
@@ -90,7 +90,7 @@ namespace YeetTheEarth
                 default: //Do nothing
                     _earth.GDP -= 30000000;
                     _earth.TempRate += 0.02;
-                    _earth.Co2Rate += .02;
+                    _earth.Co2Rate *= 1.02;
 
                     return "You ignored to save the trees. :( This raised the CO2 level and temperature. All the wildlife is dying. Nature is in chaos.";//change this
             }

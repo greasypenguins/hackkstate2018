@@ -75,7 +75,7 @@ namespace YeetTheEarth
                 case 2://impliment two child policy
                     _monthsLeft = 0;
                     _earth.GDP -= 1000000000;
-                    return "This decreased amount of p//  opulation but now there isn't enough children and in turn overly decreased population. Oh no.";
+                    return "This decreased amount of population but now there isn't enough children and in turn overly decreased population. Oh no.";
                 case 3://remove part of population
                     _monthsLeft = 0;
                     _earth.Population -= 100000000;

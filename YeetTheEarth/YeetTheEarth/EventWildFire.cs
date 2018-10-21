@@ -46,7 +46,7 @@ namespace YeetTheEarth
 
         private string _description = string.Join("",
             "A Fire crisis has struck the United States. Only you can stop wildfires. People are fleeing from their homes as the fires are destroying everything in its path. In a month, more than half of the country will burn into ashes.",
-            "Its only half way through the month. What do you do?");
+            " Only you can save the forest.");
         public string Description //Description of event
         {
             get
@@ -76,13 +76,13 @@ namespace YeetTheEarth
             switch (option)
             {
                 case 0: //Fire stuff
+
                     _monthsLeft = 0;
                     _earth.GDP -= 2870000;//change this
                     return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
 
                 default: //Do nothing
-                    _earth.Co2Rate += 242;
-                    _earth.Co2Rate += 242;
+                    _earth.Co2Rate *= 1.05;
                     _earth.GDP -= 34643000;
                     _earth.Population -= 432000;
                     return "The investment have been ignored. Was that a smart choice? Ashes. Ashes. We all fall down.";//change this

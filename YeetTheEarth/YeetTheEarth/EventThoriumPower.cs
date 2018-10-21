@@ -76,7 +76,7 @@ namespace YeetTheEarth
                 case 0: //power plants
                     _earth.GDP = _earth.GDP - 3000000000;
                     _earth.Energy.ModifyNuclearUse(.5);
-                    _earth.Co2Rate = _earth.Co2Rate - 0.5;
+                    _earth.Co2Rate *= -1.05;
                     _earth.Population = _earth.Population - 30000000;
                     return "You have spent $3,000,000,000 on new nuclear plants. The percent of Nuclear power has increased. The rate of CO2 concentrasion rise has decreased. A nuclear reactor exploded and killed 30,000,000 people.";
                 default:

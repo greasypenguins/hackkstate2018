@@ -69,13 +69,13 @@ namespace YeetTheEarth
         {
             switch (option)
             {
-                case 1://CoralReef
+                case 0://CoralReef
 
-                    _earth.Co2Rate += .05;
+                    _earth.Co2Rate *= 1.05;
                     _earth.SeaRate += .05;
                     _earth.GDP -= 33540000;//change this
                     return "How horrible! The ocean is getting worse rising the sea levels and CO2 concentration.";//change this
-                case 2:
+                case 1:
                     _monthsLeft = 0;
                     _earth.GDP -= 3770000;
                     return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";

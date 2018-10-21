@@ -69,7 +69,7 @@ namespace YeetTheEarth
             switch (option)
             {
                 case 0://pesticide
-                    _earth.Co2Rate += .5;
+                    _earth.Co2Rate *= 1.5;
                     _earth.TempRate += .5;
                     return "The pesticide made the enviorment cry into the ocean which led to many disasters including the temperature and CO2 concentration rising. Oops.";
 
