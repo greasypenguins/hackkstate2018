@@ -35,7 +35,7 @@ namespace YeetTheEarth
             _remainingEvents.Add(new EventGeoengAtmosphere(_earth));
             _remainingEvents.Add(new EventInsectOutbreak(_earth));
             _remainingEvents.Add(new EventPopulationExplosion(_earth));
-            //_remainingEvents.Add(new EventSolarTechImprovement(_earth));
+            _remainingEvents.Add(new EventSolarTechImprovement(_earth));
             //...
 
             _randomizer = new Random();

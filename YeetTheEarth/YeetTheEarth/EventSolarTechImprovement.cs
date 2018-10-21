@@ -12,7 +12,8 @@ namespace YeetTheEarth
 
         private string[] _options = {
             "Do nothing.",
-            "Do something."};
+            "Invest in solar research.",
+            "Mass produce solar technology."};
 
         private string _name = "Solar Technology Improvement";
         public string Name //Name of event
@@ -46,7 +47,24 @@ namespace YeetTheEarth
 
         public string ChooseOption(int option) //Choose one of the options and get the result
         {
-            throw new NotImplementedException();
+            switch (option)
+            {
+                case 1://family planning
+                    _earth.GDP -= 10000000000;
+                    return "Scientist have studied hard and have found nothing. Lost a little money. Oh well.";
+
+                case 2://solar research
+                    _monthsLeft = 0;
+                    _earth.Co2Rate -= 1;
+                    _earth.TempRate -= 1;
+                    _earth.SeaRate -= 1;
+                    return "This helped decrease CO2 rate and lower sea levels.";
+                default://nothing
+                    _earth.Co2Rate += 1;
+                    _earth.TempRate += 1;
+                    _earth.SeaRate += 1;
+                    return "You did nothing this month. This has increased temperature, CO2, and the Sea Level.";
+            }
         }
 
         public string[] NextMonth() //Advance the event one month and get options
@@ -68,8 +86,6 @@ namespace YeetTheEarth
                     ret = _options;
                     break;
             }
-
-            throw new NotImplementedException();
             _monthsLeft--;
             return ret;
         }

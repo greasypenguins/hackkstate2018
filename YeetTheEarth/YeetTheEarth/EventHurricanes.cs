@@ -43,7 +43,7 @@ namespace YeetTheEarth
             {
                 return _monthsLeft;
             }
-        }1
+        }
         public string[] NextMonth() //Advance the event one month and get options
         {
             _monthsLeft--;
