@@ -10,6 +10,21 @@ namespace YeetTheEarth
     {
         private List<IEvent> _remainingEvents;
 
+        public bool MoreEvents
+        {
+            get
+            {
+                if(_remainingEvents.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         private Random _randomizer;
 
         public EventGenerator(Earth _earth)

@@ -52,9 +52,12 @@ namespace YeetTheEarth
                 _player.ShowGDP(_earth.GDP);
 
                 //Generate random events sometimes
-                if (_randomizer.Next(100) < _eventGenerationChance)
+                if(_eventGenerator.MoreEvents)
                 {
-                    _activeEvents.Add(_eventGenerator.GetEvent());
+                    if (_randomizer.Next(100) < _eventGenerationChance)
+                    {
+                        _activeEvents.Add(_eventGenerator.GetEvent());
+                    }
                 }
 
                 //Handle all active events
