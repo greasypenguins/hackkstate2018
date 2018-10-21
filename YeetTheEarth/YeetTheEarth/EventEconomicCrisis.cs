@@ -63,20 +63,26 @@ namespace YeetTheEarth
             switch (option)
             {
                 case 0://coal
+                    _monthsLeft = 0;
                     _earth.Energy.ModifyCoalUse(.5);
                    return "Coal use rate increased.";
                 case 1://renewable
+                    _monthsLeft = 0;
                     _earth.Energy.ModifyRenewableUse(.5);
                     return "Renewable energy use rate increased.";
                 case 2://nuclear
+                    _monthsLeft = 0;
                     return "Nuclear energy use rate increased.";
                 case 3://natural
+                    _monthsLeft = 0;
                     return "Natural gas use rate increased.";
                 case 4://hydro
+                    _monthsLeft = 0;
                     return "Hydro energy use rate increased.";
                 case 5://oil
                     return "Oil use rate increased.";
                 case 6://biodegradable
+                    _monthsLeft = 0;
                     _earth.Energy.ModifyHydroUse(-.5);
                     return "Biodegradable energy has increased.";
                 case 7://teach
