@@ -117,6 +117,7 @@ namespace YeetTheEarth
 
         public void ShowEventInfo(string eventName, string eventDescription)
         {
+            Console.WriteLine();
             WriteLineWrap("Event: " + eventName);
             WriteLineWrap("Description: " + eventDescription);
         }
