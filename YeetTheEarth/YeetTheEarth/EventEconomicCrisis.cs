@@ -12,12 +12,12 @@ namespace YeetTheEarth
 
         private string[] _options = {
             "Invest in Coal.",
-            "Invest in Renewable",
-            "Invest in Wind",
+            "Invest in Renewable Energy",
             "Invest in Nuclear",
             "Invest in Natural Gas",
-            "Invest in Geothermic",
             "Invest in Hydro",
+            "Invest in Oil",
+            "Invest in Biodegradable Energy",
             "Impliment a energy program to teach about energy conservation",
             "Do Nothing."};
 
@@ -64,27 +64,25 @@ namespace YeetTheEarth
 
             switch (option)
             {
-                case 1://coal
-                    _earth.Energy.ModifyCoalUse(-.5);
-                   return "Coal Use rate decreased.";
-                case 2://solar
-
+                case 0://coal
+                    _earth.Energy.ModifyCoalUse(.5);
+                   return "Coal use rate increased.";
+                case 1://renewable
+                    _earth.Energy.ModifyRenewableUse(.5);
+                    return "Renewable energy use rate increased.";
                     return "";
-                case 3://wind
-                    return "";
-                case 4://nuclear
-                    return "";
-                case 5://natural gas
-                    return "";
-                case 6://geothermic
-                    return "";
-                case 7://hydro
+                case 2://nuclear
+                    return "Nuclear energy use rate increased.";
+                case 3://natural
+                    return "Natural gas use rate increased.";
+                case 4://hydro
+                    return "Hydro energy use rate increased.";
+                case 5://oil
+                    return "Oil use rate increased.";
+                case 6://biodegradable
                     _earth.Energy.ModifyHydroUse(-.5);
-                    return "";
-                case 8://energy program
-
-                    return "";
-                case 9://nothing
+                    return "Biodegradable ";
+                case 7://teach
                     return "";
                 default:
                     return "";
