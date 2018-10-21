@@ -65,6 +65,8 @@ namespace YeetTheEarth
                     return "Adding extra protection for the reef, what an investment. This causes the population of the coral reef to increase and improve water quality in the ocean.";
 
                 default: //Do nothing
+                    _earth.GDP -= 3042303;
+                    _earth.TempRate += 0.2;
                     return "You ignored to conserve the coral reef. The population of coral reef died very rapidly causing a scarcity on seafood. Did you hate seafood?";//change this
             }
 

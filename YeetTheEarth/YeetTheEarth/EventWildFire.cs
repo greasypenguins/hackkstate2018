@@ -54,7 +54,7 @@ namespace YeetTheEarth
         {
             switch (option)
             {
-                case 1: //Fire stuff
+                case 0: //Fire stuff
                     _monthsLeft++;//change this
                     _earth.GDP -= 2870000;//change this
                     return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
