@@ -56,11 +56,13 @@ namespace YeetTheEarth
             {
                 case 1: //Fire stuff
                     _monthsLeft++;//change this
-                    _earth.GDP -= 287000000;//change this
+                    _earth.GDP -= 2870000;//change this
                     return "Smokey the bear is happy that you have invested in preventing future wildfires";//change this
 
                 default: //Do nothing
-                    _earth.Co2Rate +=242
+                    _earth.Co2Rate += 242;
+                    _earth.GDP -= 34643000;
+                    _earth.Population -= 432000;
                     return "The investment have been ignored. Was that a smart choice? Ashes. Ashes. We all fall down.";//change this
             }
 
