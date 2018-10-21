@@ -133,7 +133,7 @@ namespace YeetTheEarth
         //Private because it's used when percents don't add up to 100%
         private double SumPercents()
         {
-            return (_percentOil + _percentCoal + _percentNaturalGas + _percentWaste + _percentNuclear + _percentHydro + _percentRenewable)
+            return (_percentOil + _percentCoal + _percentNaturalGas + _percentWaste + _percentNuclear + _percentHydro + _percentRenewable);
         }
 
         //Private because it multiplies all percents so it will be over/under 100%
