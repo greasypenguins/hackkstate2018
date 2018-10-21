@@ -11,7 +11,7 @@ namespace YeetTheEarth
         static void Main(string[] args)
         {
             GameController gc = new GameController();
-
+            gc.RunGame();
             //Print what month it is/how many months have passed
 
             //Print a random event and fact for them to understand
