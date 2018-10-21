@@ -8,6 +8,8 @@ namespace YeetTheEarth
 {
     interface IEvent
     {
+        string Art { get; } //ASCII Art for this event
+
         string Name { get; } //Name of event
 
         string Description { get; } //Description of event

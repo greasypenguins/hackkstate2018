@@ -69,10 +69,13 @@ namespace YeetTheEarth
             WriteLineWrap(s);
         }
 
-        public void ShowAsciiArt(string s)
+        public void ShowArt(string s)
         {
-            Console.WriteLine();
-            Console.Write(s);
+            if(s.Length > 0)
+            {
+                Console.WriteLine();
+                Console.Write(s);
+            }
         }
 
         public void ShowWin()

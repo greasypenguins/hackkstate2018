@@ -83,6 +83,10 @@ namespace YeetTheEarth
                     for (int i = 0; i < _activeEvents.Count; i++)
                     {
                         IEvent thisEvent = _activeEvents[i];
+
+                        //Show ASCII art
+                        _player.ShowArt(thisEvent.Art);
+
                         //Show event info
                         _player.ShowEventInfo(thisEvent.Name, thisEvent.Description);
 

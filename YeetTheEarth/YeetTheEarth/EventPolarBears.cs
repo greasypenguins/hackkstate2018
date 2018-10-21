@@ -8,6 +8,15 @@ namespace YeetTheEarth
 {
     class EventPolarBears : IEvent
     {
+        private readonly string _art = ""; //ASCII art for this event
+        public string Art
+        {
+            get
+            {
+                return _art;
+            }
+        }
+
         private Earth _earth;
 
         private string[] _options = {
